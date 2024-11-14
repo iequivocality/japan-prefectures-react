@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "declarationMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "japan-prefectures": ["../dist"]
+    }
+  },
+  "include": ["src"]
+}
