@@ -1,2 +1,2 @@
-export { default as MyComponent } from './MyComponent';
-export type { MyComponentProps } from './MyComponent';
+export { default as Hokkaido } from "./Hokkaido";
+export { default as Aomori } from "./Aomori";

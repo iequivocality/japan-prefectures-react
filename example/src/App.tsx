@@ -1,9 +1,13 @@
-import React from 'react';
-import { MyComponent, MyComponentProps } from "japan-prefectures";
+import React from "react";
+import { Aomori, Hokkaido } from "japan-prefectures";
 
 const App: React.FC = () => {
-  const props: MyComponentProps = { title: "Hello", count: 5 };
-  return <MyComponent {...props} />;
+  return (
+    <div>
+      <Hokkaido width={100} />
+      <Aomori width={100} />
+    </div>
+  );
 };
 
 export default App;
