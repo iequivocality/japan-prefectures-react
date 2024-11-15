@@ -1,13 +1,18 @@
-import React, { SVGAttributes, forwardRef } from "react";
+import React, { forwardRef } from "react";
+import { PrefectureFlagProps } from "./types";
 
-const Hokkaido = forwardRef<SVGElement, { width: string | number | undefined }>(
-  ({ width }, ref) => {
+const Hokkaido = forwardRef<SVGSVGElement, PrefectureFlagProps>(
+  ({ width, height, className }, ref) => {
+    const newClassname = `prefecture-flag hokkaido ${className}`;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="-630 -420 1260 840"
-        width={width}
+        ref={ref}
+        width={width ?? 300}
+        height={height ?? 200}
+        className={newClassname}
       >
         <path d="M-630-420h1260v840H-630z" fill="#2f304e" />
         <path

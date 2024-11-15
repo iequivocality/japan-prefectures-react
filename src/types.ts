@@ -6,4 +6,5 @@ export type Prefecture = {
   code: `JP-${Exclude<`${CodeTensPlace}${CodeNumbers}`, "00" | "48" | "49">}`;
   japanese: string;
   romaji: string;
+  type: string;
 };
