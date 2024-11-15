@@ -9,4 +9,4 @@ export type Prefecture = {
   type: string;
 };
 
-export * from "./react/types";
+export * from "./flags/types";

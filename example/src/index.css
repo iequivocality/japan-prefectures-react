@@ -1,3 +1,9 @@
 html {
   color-scheme: dark;
 }
+
+main {
+  width: 100dvw;
+  display: flex;
+  flex-wrap: wrap;
+}

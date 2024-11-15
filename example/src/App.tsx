@@ -51,9 +51,9 @@ import {
 
 const App: React.FC = () => {
   return (
-    <div>
+    <main>
       <Hokkaido width={100} />
-      {/* <Aomori width={100} />
+      <Aomori width={100} />
       <Iwate width={100} />
       <Miyagi width={100} />
       <Akita width={100} />
@@ -98,8 +98,8 @@ const App: React.FC = () => {
       <Oita width={100} />
       <Miyazaki width={100} />
       <Kagoshima width={100} />
-      <Okinawa width={100} /> */}
-    </div>
+      <Okinawa width={100} />
+    </main>
   );
 };
 
