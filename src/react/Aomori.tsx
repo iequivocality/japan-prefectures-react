@@ -7,7 +7,7 @@ const Aomori = forwardRef<SVGSVGElement, PrefectureFlagProps>(
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         viewBox="0 0 400 280"
         ref={ref}
         width={width ?? 285.71428}

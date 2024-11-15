@@ -15,7 +15,7 @@ const Oita = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         className={newClassname}
       >
         <path d="M-450-315h900v630h-900z" fill="#fff" />
-        <circle r="122.5" stroke="#be0428" stroke-width="35" fill="none" />
+        <circle r="122.5" stroke="#be0428" strokeWidth="35" fill="none" />
         <g id="a">
           <path d="M-3.5-160h7v80h-7z" fill="#fff" />
           <path

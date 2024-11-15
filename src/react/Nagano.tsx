@@ -18,7 +18,7 @@ const Nagano = forwardRef<SVGSVGElement, PrefectureFlagProps>(
           d="M10 300h600M150 25a275 275 0 0 1 0 550"
           fill="none"
           stroke="#f66637"
-          stroke-width="50"
+          strokeWidth="50"
         />
       </svg>
     );

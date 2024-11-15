@@ -13,7 +13,7 @@ const Toyama = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         height={height ?? 200}
         className={newClassname}
       >
-        <g stroke-linecap="round" stroke-linejoin="round">
+        <g strokeLinecap="round" strokeLinejoin="round">
           <path fill="#fff" d="M0 0h211.67v141.02H0z" />
           <path
             fill="#1a9431"

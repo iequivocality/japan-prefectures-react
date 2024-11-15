@@ -23,7 +23,7 @@ const Nara = forwardRef<SVGSVGElement, PrefectureFlagProps>(
           x2="850"
           y2="400"
           stroke="#5b1c1f"
-          stroke-width="80"
+          strokeWidth="80"
         />
         <line
           x1="340"
@@ -31,7 +31,7 @@ const Nara = forwardRef<SVGSVGElement, PrefectureFlagProps>(
           x2="365"
           y2="400"
           stroke="#ffffff"
-          stroke-width="10"
+          strokeWidth="10"
         />
       </svg>
     );

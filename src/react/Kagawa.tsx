@@ -17,11 +17,11 @@ const Kagawa = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         </clipPath>
         <path d="M0 0H900V600H0z" fill="#005933" />
         <g
-          clip-path="url(#a)"
+          clipPath="url(#a)"
           stroke="#fff"
           fill="none"
           transform="translate(250 108)"
-          stroke-width="80"
+          strokeWidth="80"
         >
           <circle cx="-100" cy="400" r="340" />
           <path d="M360 400A460 460 0 0 0 176 32m48 0A460 460 0 0 0 40 400" />

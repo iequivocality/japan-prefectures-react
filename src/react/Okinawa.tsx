@@ -10,9 +10,9 @@ const Okinawa = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         height={height ?? 200}
         className={newClassname}>
         <path fill="#fff" d="M0 0h211.667v141.023H0z" />
-        <circle cx="105.833" cy="70.398" r="50.237" fill="#e00" paint-order="fill markers stroke" />
-        <ellipse cx="105.833" cy="60.397" fill="#fff" paint-order="fill markers stroke" rx="34.352" ry="35.111" />
-        <ellipse cx="105.834" cy="52.654" fill="#e00" paint-order="fill markers stroke" rx="22.573" ry="22.538" />
+        <circle cx="105.833" cy="70.398" r="50.237" fill="#e00" paintOrder="fill markers stroke" />
+        <ellipse cx="105.833" cy="60.397" fill="#fff" paintOrder="fill markers stroke" rx="34.352" ry="35.111" />
+        <ellipse cx="105.834" cy="52.654" fill="#e00" paintOrder="fill markers stroke" rx="22.573" ry="22.538" />
       </svg>
     );
   },

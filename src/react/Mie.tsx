@@ -21,7 +21,7 @@ const Mie = forwardRef<SVGSVGElement, PrefectureFlagProps>(
           cy="295"
           r="78.5"
           fill="none"
-          stroke-width="79"
+          strokeWidth="79"
           stroke="#fff"
         />
       </svg>

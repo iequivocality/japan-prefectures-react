@@ -21,7 +21,7 @@ const Osaka = forwardRef<SVGSVGElement, PrefectureFlagProps>(
             cx="6"
             r="2"
             stroke="#fff"
-            stroke-width="2"
+            strokeWidth="2"
             fill="none"
           />
           <use xlinkHref="#a" transform="rotate(120 2 0)" />

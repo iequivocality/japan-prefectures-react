@@ -15,7 +15,7 @@ const Kanagawa = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         <path
           d="M0 23a5 5 0 0 0 5-5V6m.32 7.76A6 6 0 1 1 13 8v13a1 1 0 0 1-4 0V8a6 6 0 1 1 7.68 5.76M17 6v12a5 5 0 0 0 5 5M7 0v2m8-2v2"
           stroke="#f00"
-          stroke-width="2"
+          strokeWidth="2"
           fill="none"
           transform="scale(18.75) translate(13 4)"
         />

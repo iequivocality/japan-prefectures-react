@@ -13,7 +13,7 @@ const Aichi = forwardRef<SVGSVGElement, PrefectureFlagProps>(
         height={height ?? 200}
         className={newClassname}
       >
-        <path fill="#a63c47" fill-rule="evenodd" d="M0 0h1000v700H0z" />
+        <path fill="#a63c47" fillRule="evenodd" d="M0 0h1000v700H0z" />
         <path
           fill="#fff"
           d="M601 257a160.6 160.6 0 0 0-59.6 62s42.7 23.4 42.2 73c0 3.8-.3 7.6-.8 11.1a143.3 143.3 0 0 1-172.6 131A168.3 168.3 0 0 0 601 257z"
