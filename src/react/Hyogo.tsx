@@ -3,7 +3,7 @@ import { PrefectureFlagProps } from "./types";
 
 const Hyogo = forwardRef<SVGSVGElement, PrefectureFlagProps>(
   ({ width, height, className }, ref) => {
-    const newClassname = `prefecture-flag hyogo ${className}`;
+    const newClassname = `prefecture-flag hyogo  ${className ?? ""}`;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

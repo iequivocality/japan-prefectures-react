@@ -3,7 +3,7 @@ import { PrefectureFlagProps } from "./types";
 
 const Shimane = forwardRef<SVGSVGElement, PrefectureFlagProps>(
   ({ width, height, className }, ref) => {
-    const newClassname = `prefecture-flag shimane ${className}`;
+    const newClassname = `prefecture-flag shimane  ${className ?? ""}`;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
