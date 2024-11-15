@@ -8,3 +8,5 @@ export type Prefecture = {
   romaji: string;
   type: string;
 };
+
+export * from "./react/types";

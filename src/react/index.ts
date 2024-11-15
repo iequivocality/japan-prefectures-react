@@ -1,47 +1,97 @@
-export { default as Hokkaido } from "./Hokkaido";
-export { default as Aomori } from "./Aomori";
-export { default as Iwate } from "./Iwate";
-export { default as Miyagi } from "./Miyagi";
-export { default as Akita } from "./Akita";
-export { default as Yamagata } from "./Yamagata";
-export { default as Fukushima } from "./Fukushima";
-export { default as Ibaraki } from "./Ibaraki";
-export { default as Tochigi } from "./Tochigi";
-export { default as Gunma } from "./Gunma";
-export { default as Saitama } from "./Saitama";
-export { default as Chiba } from "./Chiba";
-export { default as Tokyo } from "./Tokyo";
-export { default as Kanagawa } from "./Kanagawa";
-export { default as Niigata } from "./Niigata";
-export { default as Toyama } from "./Toyama";
-export { default as Ishikawa } from "./Ishikawa";
-export { default as Fukui } from "./Fukui";
-export { default as Yamanashi } from "./Yamanashi";
-export { default as Nagano } from "./Nagano";
-export { default as Gifu } from "./Gifu";
-export { default as Shizuoka } from "./Shizuoka";
-export { default as Aichi } from "./Aichi";
-export { default as Mie } from "./Mie";
-export { default as Shiga } from "./Shiga";
-export { default as Kyoto } from "./Kyoto";
-export { default as Osaka } from "./Osaka";
-export { default as Hyogo } from "./Hyogo";
-export { default as Nara } from "./Nara";
-export { default as Wakayama } from "./Wakayama";
-export { default as Tottori } from "./Tottori";
-export { default as Shimane } from "./Shimane";
-export { default as Okayama } from "./Okayama";
-export { default as Hiroshima } from "./Hiroshima";
-export { default as Yamaguchi } from "./Yamaguchi";
-export { default as Tokushima } from "./Tokushima";
-export { default as Kagawa } from "./Kagawa";
-export { default as Ehime } from "./Ehime";
-export { default as Kochi } from "./Kochi";
-export { default as Fukuoka } from "./Fukuoka";
-export { default as Saga } from "./Saga";
-export { default as Nagasaki } from "./Nagasaki";
-export { default as Kumamoto } from "./Kumamoto";
-export { default as Oita } from "./Oita";
-export { default as Miyazaki } from "./Miyazaki";
-export { default as Kagoshima } from "./Kagoshima";
-export { default as Okinawa } from "./Okinawa";
+import Hokkaido from "./Hokkaido";
+import Aomori from "./Aomori";
+import Iwate from "./Iwate";
+import Miyagi from "./Miyagi";
+import Akita from "./Akita";
+import Yamagata from "./Yamagata";
+import Fukushima from "./Fukushima";
+import Ibaraki from "./Ibaraki";
+import Tochigi from "./Tochigi";
+import Gunma from "./Gunma";
+import Saitama from "./Saitama";
+import Chiba from "./Chiba";
+import Tokyo from "./Tokyo";
+import Kanagawa from "./Kanagawa";
+import Niigata from "./Niigata";
+import Toyama from "./Toyama";
+import Ishikawa from "./Ishikawa";
+import Fukui from "./Fukui";
+import Yamanashi from "./Yamanashi";
+import Nagano from "./Nagano";
+import Gifu from "./Gifu";
+import Shizuoka from "./Shizuoka";
+import Aichi from "./Aichi";
+import Mie from "./Mie";
+import Shiga from "./Shiga";
+import Kyoto from "./Kyoto";
+import Osaka from "./Osaka";
+import Hyogo from "./Hyogo";
+import Nara from "./Nara";
+import Wakayama from "./Wakayama";
+import Tottori from "./Tottori";
+import Shimane from "./Shimane";
+import Okayama from "./Okayama";
+import Hiroshima from "./Hiroshima";
+import Yamaguchi from "./Yamaguchi";
+import Tokushima from "./Tokushima";
+import Kagawa from "./Kagawa";
+import Ehime from "./Ehime";
+import Kochi from "./Kochi";
+import Fukuoka from "./Fukuoka";
+import Saga from "./Saga";
+import Nagasaki from "./Nagasaki";
+import Kumamoto from "./Kumamoto";
+import Oita from "./Oita";
+import Miyazaki from "./Miyazaki";
+import Kagoshima from "./Kagoshima";
+import Okinawa from "./Okinawa";
+
+export default {
+  Aichi,
+  Akita,
+  Aomori,
+  Chiba,
+  Ehime,
+  Fukui,
+  Fukuoka,
+  Fukushima,
+  Gifu,
+  Gunma,
+  Hiroshima,
+  Hokkaido,
+  Hyogo,
+  Ibaraki,
+  Ishikawa,
+  Iwate,
+  Kagawa,
+  Kagoshima,
+  Kanagawa,
+  Kochi,
+  Kumamoto,
+  Kyoto,
+  Mie,
+  Miyagi,
+  Miyazaki,
+  Nagano,
+  Nagasaki,
+  Nara,
+  Niigata,
+  Oita,
+  Okayama,
+  Okinawa,
+  Osaka,
+  Saga,
+  Saitama,
+  Shiga,
+  Shimane,
+  Shizuoka,
+  Tochigi,
+  Tokushima,
+  Tokyo,
+  Tottori,
+  Toyama,
+  Wakayama,
+  Yamagata,
+  Yamaguchi,
+  Yamanashi
+}

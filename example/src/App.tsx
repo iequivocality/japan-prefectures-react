@@ -1,11 +1,59 @@
 import React from "react";
-import { Aichi, Akita, Aomori, Chiba, Ehime, Fukui, Fukuoka, Fukushima, Gifu, Gunma, Hiroshima, Hokkaido, Hyogo, Ibaraki, Ishikawa, Iwate, Kagawa, Kagoshima, Kanagawa, Kochi, Kumamoto, Kyoto, Mie, Miyagi, Miyazaki, Nagano, Nagasaki, Nara, Niigata, Oita, Okayama, Okinawa, Osaka, Saga, Saitama, Shiga, Shimane, Shizuoka, Tochigi, Tokushima, Tokyo, Tottori, Toyama, Wakayama, Yamagata, Yamaguchi, Yamanashi } from "japan-prefectures";
+import {
+  Aichi,
+  Akita,
+  Aomori,
+  Chiba,
+  Ehime,
+  Fukui,
+  Fukuoka,
+  Fukushima,
+  Gifu,
+  Gunma,
+  Hiroshima,
+  Hokkaido,
+  Hyogo,
+  Ibaraki,
+  Ishikawa,
+  Iwate,
+  Kagawa,
+  Kagoshima,
+  Kanagawa,
+  Kochi,
+  Kumamoto,
+  Kyoto,
+  Mie,
+  Miyagi,
+  Miyazaki,
+  Nagano,
+  Nagasaki,
+  Nara,
+  Niigata,
+  Oita,
+  Okayama,
+  Okinawa,
+  Osaka,
+  Saga,
+  Saitama,
+  Shiga,
+  Shimane,
+  Shizuoka,
+  Tochigi,
+  Tokushima,
+  Tokyo,
+  Tottori,
+  Toyama,
+  Wakayama,
+  Yamagata,
+  Yamaguchi,
+  Yamanashi,
+} from "japan-prefectures";
 
 const App: React.FC = () => {
   return (
     <div>
       <Hokkaido width={100} />
-      <Aomori width={100} />
+      {/* <Aomori width={100} />
       <Iwate width={100} />
       <Miyagi width={100} />
       <Akita width={100} />
@@ -50,7 +98,7 @@ const App: React.FC = () => {
       <Oita width={100} />
       <Miyazaki width={100} />
       <Kagoshima width={100} />
-      <Okinawa width={100} />
+      <Okinawa width={100} /> */}
     </div>
   );
 };

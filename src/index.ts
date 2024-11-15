@@ -1,2 +1,5 @@
-export * from "./react";
-export * from "./core";
+import ReactComponents from "./react";
+
+export default {
+  ...ReactComponents
+}

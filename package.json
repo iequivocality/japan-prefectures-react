@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && babel src --out-dir dist --extensions '.ts,.tsx'",
+    "build": "rimraf dist && tsc && babel src --out-dir dist --extensions \".ts,.tsx\" && copyfiles -f \"src/assets/*.svg\" dist/assets",
     "prepublishOnly": "rm -rf dist && pnpm build",
     "prettier": "pnpm exec prettier . --write"
   },
@@ -21,7 +21,9 @@
     "@babel/preset-typescript": "^7.26.0",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
+    "copyfiles": "^2.4.1",
     "prettier": "3.3.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.6.3"
   },
   "dependencies": {
@@ -37,5 +39,6 @@
   ],
   "publishConfig": {
     "directory": "dist"
-  }
+  },
+  "type": "module"
 }
