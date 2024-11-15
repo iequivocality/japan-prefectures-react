@@ -9,4 +9,6 @@ export type Prefecture = {
   type: string;
 };
 
-export * from "./flags/types";
+export * from "../flags/types";
+
+export type PrefectureFields = keyof Prefecture;
