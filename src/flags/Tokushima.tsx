@@ -11,7 +11,10 @@ const Tokushima = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 285.71428, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 285.71428,
+          height: 200,
+        })}
       ></img>
     );
   },

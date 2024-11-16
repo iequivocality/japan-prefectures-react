@@ -11,7 +11,10 @@ const Fukuoka = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 285.9375, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 285.9375,
+          height: 200,
+        })}
       ></img>
     );
   },

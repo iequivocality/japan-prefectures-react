@@ -11,7 +11,10 @@ const Ishikawa = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 283.87096, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 283.87096,
+          height: 200,
+        })}
       ></img>
     );
   },

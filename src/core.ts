@@ -156,7 +156,7 @@ const prefectureData: Prefecture[] = [
     japanese: "Kyoto",
     romaji: "Kyoto",
     type: "Fu",
-  },  
+  },
   {
     code: "JP-27",
     japanese: "Osaka",

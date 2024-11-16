@@ -1,3 +1,5 @@
+import { Flags } from ".";
+
 export type PrefectureFlagProps = {
   height?: number;
   width?: number;
@@ -7,4 +9,8 @@ export type PrefectureFlagProps = {
 export type Size = {
   width: number;
   height: number;
-}
+};
+
+export type PrefectureFlagComponent = React.ForwardRefExoticComponent<PrefectureFlagProps & React.RefAttributes<HTMLImageElement>>;
+
+export type PrefectureFlags = typeof Flags;

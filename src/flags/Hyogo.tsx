@@ -11,7 +11,10 @@ const Hyogo = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 284.46351, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 284.46351,
+          height: 200,
+        })}
       ></img>
     );
   },

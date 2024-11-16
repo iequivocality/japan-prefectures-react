@@ -4,8 +4,8 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import copy from 'rollup-plugin-copy';
-import svg from 'rollup-plugin-svg-import';
+import copy from "rollup-plugin-copy";
+import svg from "rollup-plugin-svg-import";
 import packageJson from "./packageJson.cjs";
 
 export default [
@@ -30,9 +30,7 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
       copy({
-        targets: [
-          { src: 'src/assets/*', dest: 'dist/assets' }
-        ]
+        targets: [{ src: "src/assets/*", dest: "dist/assets" }],
       }),
     ],
     external: ["react", "react-dom", /\.svg$/],
@@ -42,5 +40,5 @@ export default [
     output: [{ file: packageJson.types }],
     plugins: [dts()],
     external: [/\.css$/],
-  }
+  },
 ];

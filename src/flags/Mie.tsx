@@ -11,7 +11,10 @@ const Mie = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 282.71844, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 282.71844,
+          height: 200,
+        })}
       ></img>
     );
   },

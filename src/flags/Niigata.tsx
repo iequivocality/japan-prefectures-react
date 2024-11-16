@@ -11,7 +11,10 @@ const Niigata = forwardRef<HTMLImageElement, PrefectureFlagProps>(
         src={Flag}
         ref={ref}
         className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 277.77777, height: 200 })}
+        {...getPrefectureFlagSize(width, height, {
+          width: 277.77777,
+          height: 200,
+        })}
       ></img>
     );
   },
