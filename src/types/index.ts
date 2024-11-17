@@ -21,6 +21,11 @@ export type Prefecture = {
   romaji: string;
   type: PrefectureType;
   region: Region;
+  borders: PrefectureCode[];
+};
+
+export type CompletePrefecture = Omit<Prefecture, "borders"> & {
+  borders: Prefecture[];
 };
 
 export type PrefectureNames = {

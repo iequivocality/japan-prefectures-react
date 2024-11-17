@@ -1,6 +1,8 @@
 import {
+  CompletePrefecture,
   Language,
   Prefecture,
+  PrefectureCode,
   PrefectureFields,
   PrefectureNames,
   PrefectureType,
@@ -82,6 +84,7 @@ const prefectures: Prefecture[] = [
     romaji: "Hokkaidō",
     type: prefectureTypes["do"],
     region: regions["hokkaido"],
+    borders: ["JP-02"],
   },
   {
     code: "JP-02",
@@ -89,6 +92,7 @@ const prefectures: Prefecture[] = [
     romaji: "Aomori",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-01", "JP-03", "JP-05"],
   },
   {
     code: "JP-03",
@@ -96,6 +100,7 @@ const prefectures: Prefecture[] = [
     romaji: "Iwate",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-02", "JP-03", "JP-04"],
   },
   {
     code: "JP-04",
@@ -103,6 +108,7 @@ const prefectures: Prefecture[] = [
     romaji: "Miyagi",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-03", "JP-05", "JP-06", "JP-07"],
   },
   {
     code: "JP-05",
@@ -110,6 +116,7 @@ const prefectures: Prefecture[] = [
     romaji: "Akita",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-02", "JP-03", "JP-04", "JP-06"],
   },
   {
     code: "JP-06",
@@ -117,6 +124,7 @@ const prefectures: Prefecture[] = [
     romaji: "Yamagata",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-04", "JP-05", "JP-07", "JP-15"],
   },
   {
     code: "JP-07",
@@ -124,6 +132,7 @@ const prefectures: Prefecture[] = [
     romaji: "Fukushima",
     type: prefectureTypes["ken"],
     region: regions["tohoku"],
+    borders: ["JP-04", "JP-06", "JP-08", "JP-09", "JP-10", "JP-15"],
   },
   {
     code: "JP-08",
@@ -131,6 +140,7 @@ const prefectures: Prefecture[] = [
     romaji: "Ibaraki",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-07", "JP-09", "JP-11", "JP-12"],
   },
   {
     code: "JP-09",
@@ -138,6 +148,7 @@ const prefectures: Prefecture[] = [
     romaji: "Tochigi",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-07", "JP-08", "JP-10", "JP-11"],
   },
   {
     code: "JP-10",
@@ -145,6 +156,7 @@ const prefectures: Prefecture[] = [
     romaji: "Gunma",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-07", "JP-09", "JP-11", "JP-15", "JP-20"],
   },
   {
     code: "JP-11",
@@ -152,6 +164,7 @@ const prefectures: Prefecture[] = [
     romaji: "Saitama",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-08", "JP-09", "JP-10", "JP-12", "JP-13", "JP-19", "JP-20"],
   },
   {
     code: "JP-12",
@@ -159,6 +172,7 @@ const prefectures: Prefecture[] = [
     romaji: "Chiba",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-08", "JP-11", "JP-13"],
   },
   {
     code: "JP-13",
@@ -166,6 +180,7 @@ const prefectures: Prefecture[] = [
     romaji: "Tokyo",
     type: prefectureTypes["to"],
     region: regions["kanto"],
+    borders: ["JP-11", "JP-12", "JP-14", "JP-19"],
   },
   {
     code: "JP-14",
@@ -173,6 +188,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kanagawa",
     type: prefectureTypes["ken"],
     region: regions["kanto"],
+    borders: ["JP-13", "JP-19", "JP-22"],
   },
   {
     code: "JP-15",
@@ -180,6 +196,7 @@ const prefectures: Prefecture[] = [
     romaji: "Niigata",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-06", "JP-07", "JP-10", "JP-16", "JP-20"],
   },
   {
     code: "JP-16",
@@ -187,6 +204,7 @@ const prefectures: Prefecture[] = [
     romaji: "Toyama",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-15", "JP-17", "JP-20", "JP-21"],
   },
   {
     code: "JP-17",
@@ -194,6 +212,7 @@ const prefectures: Prefecture[] = [
     romaji: "Ishikawa",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-16", "JP-18", "JP-21"],
   },
   {
     code: "JP-18",
@@ -201,6 +220,7 @@ const prefectures: Prefecture[] = [
     romaji: "Fukui",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-17", "JP-21", "JP-25", "JP-26"],
   },
   {
     code: "JP-19",
@@ -208,6 +228,7 @@ const prefectures: Prefecture[] = [
     romaji: "Yamanashi",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-11", "JP-13", "JP-14", "JP-20", "JP-22"],
   },
   {
     code: "JP-20",
@@ -215,6 +236,16 @@ const prefectures: Prefecture[] = [
     romaji: "Nagano",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: [
+      "JP-10",
+      "JP-11",
+      "JP-15",
+      "JP-16",
+      "JP-19",
+      "JP-21",
+      "JP-22",
+      "JP-23",
+    ],
   },
   {
     code: "JP-21",
@@ -222,6 +253,7 @@ const prefectures: Prefecture[] = [
     romaji: "Gifu",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-16", "JP-17", "JP-18", "JP-20", "JP-23", "JP-24", "JP-25"],
   },
   {
     code: "JP-22",
@@ -229,6 +261,7 @@ const prefectures: Prefecture[] = [
     romaji: "Shizuoka",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-14", "JP-19", "JP-20", "JP-23"],
   },
   {
     code: "JP-23",
@@ -236,6 +269,7 @@ const prefectures: Prefecture[] = [
     romaji: "Aichi",
     type: prefectureTypes["ken"],
     region: regions["chubu"],
+    borders: ["JP-20", "JP-21", "JP-22", "JP-24"],
   },
   {
     code: "JP-24",
@@ -243,6 +277,7 @@ const prefectures: Prefecture[] = [
     romaji: "Mie",
     type: prefectureTypes["ken"],
     region: regions["kansai"],
+    borders: ["JP-21", "JP-23", "JP-25", "JP-26", "JP-29", "JP-30"],
   },
   {
     code: "JP-25",
@@ -250,6 +285,7 @@ const prefectures: Prefecture[] = [
     romaji: "Shiga",
     type: prefectureTypes["ken"],
     region: regions["kansai"],
+    borders: ["JP-18", "JP-21", "JP-24", "JP-26"],
   },
   {
     code: "JP-26",
@@ -257,6 +293,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kyoto",
     type: prefectureTypes["fu"],
     region: regions["kansai"],
+    borders: ["JP-18", "JP-24", "JP-25", "JP-27", "JP-28", "JP-29"],
   },
   {
     code: "JP-27",
@@ -264,6 +301,7 @@ const prefectures: Prefecture[] = [
     romaji: "Osaka",
     type: prefectureTypes["fu"],
     region: regions["kansai"],
+    borders: ["JP-27", "JP-28", "JP-29", "JP-30"],
   },
   {
     code: "JP-28",
@@ -271,6 +309,7 @@ const prefectures: Prefecture[] = [
     romaji: "Hyogo",
     type: prefectureTypes["ken"],
     region: regions["kansai"],
+    borders: ["JP-26", "JP-27", "JP-31", "JP-33"],
   },
   {
     code: "JP-29",
@@ -278,6 +317,7 @@ const prefectures: Prefecture[] = [
     romaji: "Nara",
     type: prefectureTypes["ken"],
     region: regions["kansai"],
+    borders: ["JP-24", "JP-26", "JP-27", "JP-30"],
   },
   {
     code: "JP-30",
@@ -285,6 +325,7 @@ const prefectures: Prefecture[] = [
     romaji: "Wakayama",
     type: prefectureTypes["ken"],
     region: regions["kansai"],
+    borders: ["JP-24", "JP-27", "JP-29"],
   },
   {
     code: "JP-31",
@@ -292,6 +333,7 @@ const prefectures: Prefecture[] = [
     romaji: "Tottori",
     type: prefectureTypes["ken"],
     region: regions["chugoku"],
+    borders: ["JP-28", "JP-32", "JP-33", "JP-34"],
   },
   {
     code: "JP-32",
@@ -299,6 +341,7 @@ const prefectures: Prefecture[] = [
     romaji: "Shimane",
     type: prefectureTypes["ken"],
     region: regions["chugoku"],
+    borders: ["JP-31", "JP-34", "JP-35"],
   },
   {
     code: "JP-33",
@@ -306,6 +349,7 @@ const prefectures: Prefecture[] = [
     romaji: "Okayama",
     type: prefectureTypes["ken"],
     region: regions["chugoku"],
+    borders: ["JP-28", "JP-31", "JP-34"],
   },
   {
     code: "JP-34",
@@ -313,6 +357,7 @@ const prefectures: Prefecture[] = [
     romaji: "Hiroshima",
     type: prefectureTypes["ken"],
     region: regions["chugoku"],
+    borders: ["JP-31", "JP-32", "JP-33", "JP-35"],
   },
   {
     code: "JP-35",
@@ -320,6 +365,7 @@ const prefectures: Prefecture[] = [
     romaji: "Yamaguchi",
     type: prefectureTypes["ken"],
     region: regions["chugoku"],
+    borders: ["JP-32", "JP-34"],
   },
   {
     code: "JP-36",
@@ -327,6 +373,7 @@ const prefectures: Prefecture[] = [
     romaji: "Tokushima",
     type: prefectureTypes["ken"],
     region: regions["shikoku"],
+    borders: ["JP-37", "JP-38", "JP-39"],
   },
   {
     code: "JP-37",
@@ -334,6 +381,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kagawa",
     type: prefectureTypes["ken"],
     region: regions["shikoku"],
+    borders: ["JP-36", "JP-38"],
   },
   {
     code: "JP-38",
@@ -341,6 +389,7 @@ const prefectures: Prefecture[] = [
     romaji: "Ehime",
     type: prefectureTypes["ken"],
     region: regions["shikoku"],
+    borders: ["JP-36", "JP-37", "JP-39"],
   },
   {
     code: "JP-39",
@@ -348,6 +397,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kochi",
     type: prefectureTypes["ken"],
     region: regions["shikoku"],
+    borders: ["JP-36", "JP-38"],
   },
   {
     code: "JP-40",
@@ -355,6 +405,7 @@ const prefectures: Prefecture[] = [
     romaji: "Fukuoka",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-41", "JP-43", "JP-44"],
   },
   {
     code: "JP-41",
@@ -362,6 +413,7 @@ const prefectures: Prefecture[] = [
     romaji: "Saga",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-40", "JP-42"],
   },
   {
     code: "JP-42",
@@ -369,6 +421,7 @@ const prefectures: Prefecture[] = [
     romaji: "Nagasaki",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-41"],
   },
   {
     code: "JP-43",
@@ -376,6 +429,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kumamoto",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-40", "JP-44", "JP-45", "JP-46"],
   },
   {
     code: "JP-44",
@@ -383,6 +437,7 @@ const prefectures: Prefecture[] = [
     romaji: "Oita",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-40", "JP-43", "JP-45"],
   },
   {
     code: "JP-45",
@@ -390,6 +445,7 @@ const prefectures: Prefecture[] = [
     romaji: "Miyazaki",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-43", "JP-44", "JP-46"],
   },
   {
     code: "JP-46",
@@ -397,6 +453,7 @@ const prefectures: Prefecture[] = [
     romaji: "Kagoshima",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: ["JP-43", "JP-45"],
   },
   {
     code: "JP-47",
@@ -404,10 +461,11 @@ const prefectures: Prefecture[] = [
     romaji: "Okinawa",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
+    borders: [],
   },
 ];
 
-export function getAllPrefectures() {
+export function getAllPrefectures(): Prefecture[] {
   return prefectures;
 }
 
@@ -419,8 +477,10 @@ export function getPrefectureByKey<
       ? Region[keyof Region]
       : Prefecture[K] extends PrefectureType
         ? Prefecture[keyof Prefecture]
-        : string,
->(key: K, value: V) {
+        : Prefecture[K] extends PrefectureCode[]
+          ? PrefectureCode
+          : string,
+>(key: K, value: V): Prefecture | undefined {
   if (key === "region") {
     return prefectures.find(
       (prefecture) =>
@@ -433,15 +493,36 @@ export function getPrefectureByKey<
       (prefecture) =>
         prefecture.type.japanese === value || prefecture.type.romaji === value,
     );
+  } else if (key === "borders" && typeof value === "string") {
+    return prefectures.find((prefecture) =>
+      prefecture.borders.includes(value as PrefectureCode),
+    );
   }
   return prefectures.find((prefecture) => prefecture[key] === value);
 }
 
-export function getPrefectureByCode(code: Prefecture["code"]) {
+export function getPrefectureByCode(
+  code: Prefecture["code"],
+): Prefecture | undefined {
   return prefectures.find((prefecture) => prefecture.code === code);
 }
 
-export function getPrefecturesByRegion(region: string) {
+export function getCompletePrefectureByCode(
+  code: Prefecture["code"],
+): CompletePrefecture | undefined {
+  const prefecture = prefectures.find((prefecture) => prefecture.code === code);
+  if (prefecture) {
+    return {
+      ...prefecture,
+      borders: prefecture.borders
+        .map((borderCode) => getPrefectureByCode(borderCode))
+        .filter((p) => !!p),
+    };
+  }
+  return undefined;
+}
+
+export function getPrefecturesByRegion(region: string): Prefecture[] {
   return prefectures.filter(
     (prefecture) =>
       prefecture.region.key === region ||
