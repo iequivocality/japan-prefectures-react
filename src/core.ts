@@ -504,7 +504,7 @@ export function getPrefectureByKey<
 export function getPrefectureByCode(
   code: Prefecture["code"],
 ): Prefecture | undefined {
-  return prefectures.find((prefecture) => prefecture.code === code);
+  return getPrefectureByKey("code", code);
 }
 
 export function getCompletePrefectureByCode(

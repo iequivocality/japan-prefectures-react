@@ -1,4 +1,4 @@
-import { getAllPrefectures, getPrefectureByKey } from "../src/core";
+import { getAllPrefectures, getPrefectureByCode, getPrefectureByKey } from "../src/core";
 
 describe("Japan Prefectures Core", () => {
   test("Test getAllPrefectures", () => {
@@ -27,5 +27,16 @@ describe("Japan Prefectures Core", () => {
     expect(getPrefectureByKey("type", "do")).toStrictEqual(hokkaido);
     expect(getPrefectureByKey("type", "道")).toStrictEqual(hokkaido);
     expect(getPrefectureByKey("borders", "JP-02")).toStrictEqual(hokkaido);
+  });
+
+  test("Test getPrefectureByCode", () => {
+    expect(getPrefectureByCode("JP-01")).toBeDefined();
+    expect(getPrefectureByCode("JP-01")?.romaji).toStrictEqual("Hokkaidō");
+
+    expect(getPrefectureByCode("JP-13")).toBeDefined();
+    expect(getPrefectureByCode("JP-13")?.romaji).toStrictEqual("Tokyo");
+
+    expect(getPrefectureByCode("JP-47")).toBeDefined();
+    expect(getPrefectureByCode("JP-47")?.romaji).toStrictEqual("Okinawa");
   });
 });
