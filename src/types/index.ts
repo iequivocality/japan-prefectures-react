@@ -5,6 +5,7 @@ type CodeTensPlace = Exclude<CodeNumbers, "5" | "6" | "7" | "8" | "9">;
 export type Language = "japanese" | "romaji";
 
 export type PrefectureType = {
+  key: PrefectureTypeKey;
   japanese: string;
   romaji: string;
 };
@@ -19,6 +20,7 @@ export type Prefecture = {
   japanese: string;
   romaji: string;
   type: PrefectureType;
+  region: Region;
 };
 
 export type PrefectureNames = {
@@ -29,4 +31,18 @@ export type PrefectureNames = {
 
 export type PrefectureFields = keyof Prefecture;
 
-export * from "../flags/types";
+export type Region = {
+  key: RegionKey;
+  japanese: string;
+  romaji: string;
+};
+
+export type RegionKey =
+  | "hokkaido"
+  | "tohoku"
+  | "kanto"
+  | "chubu"
+  | "kansai"
+  | "chugoku"
+  | "shikoku"
+  | "kyushu";

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { Prefecture, PrefectureFlagProps } from "../types";
+import { Prefecture } from "../types";
+import { PrefectureFlagProps } from "./types";
 import Aomori from "./Aomori";
 import Hokkaido from "./Hokkaido";
 import Iwate from "./Iwate";
