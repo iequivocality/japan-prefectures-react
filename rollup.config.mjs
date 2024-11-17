@@ -1,12 +1,64 @@
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import copy from "rollup-plugin-copy";
-import svg from "rollup-plugin-svg-import";
-import packageJson from "./packageJson.cjs";
+import replace from "@rollup/plugin-replace";
+import packageJson from "./loadPackageJson.cjs";
+import generatePackageJson from "rollup-plugin-generate-package-json";
+
+const commonPlugins = [
+  peerDepsExternal(),
+  resolve(),
+  replace({
+    __IS_DEV__: process.env.NODE_ENV === "development",
+    preventAssignment: true,
+  }),
+  commonjs(),
+  typescript({ tsconfig: "./tsconfig.json", useTsconfigDeclarationDir: true }),
+  terser(),
+];
+
+const subfolderPlugins = (folderName) => {
+  return [
+    ...commonPlugins,
+    generatePackageJson({
+      baseContents: {
+        name: `${packageJson.name}/${folderName}`,
+        private: true,
+        main: `../index.js`,
+        module: `./index.mjs`,
+        types: `./index.d.ts`,
+        peerDependencies: packageJson.peerDependencies,
+      },
+      outputFolder: `dist/${folderName}/`,
+    }),
+  ];
+};
+
+const folderBuilds = ["flags"].map((folder) => {
+  return {
+    input: `src/${folder}/index.ts`,
+    output: [
+      {
+        file: `dist/${folder}/index.mjs`,
+        exports: "named",
+        format: "esm",
+        banner: "'use client';",
+      },
+      {
+        file: `dist/${folder}/index.js`,
+        exports: "named",
+        format: "cjs",
+        banner: "'use client';",
+      },
+    ],
+    plugins: subfolderPlugins(folder),
+    external: ["react", "react-dom", /\.svg$/],
+  };
+});
 
 export default [
   {
@@ -15,29 +67,28 @@ export default [
       {
         file: packageJson.main,
         format: "cjs",
-        sourceMap: true,
+        sourcemap: true,
+        exports: "named",
       },
       {
         file: packageJson.module,
         format: "esm",
-        sourceMap: true,
+        sourcemap: true,
+        exports: "named",
       },
     ],
     plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
-      terser(),
+      ...commonPlugins,
       copy({
         targets: [{ src: "src/assets/*", dest: "dist/assets" }],
       }),
     ],
     external: ["react", "react-dom", /\.svg$/],
   },
+  ...folderBuilds,
   {
-    input: "src/index.ts",
-    output: [{ file: packageJson.types }],
+    input: "src/flags/index.ts",
+    output: [{ file: "dist/flags/index.d.ts" }],
     plugins: [dts()],
     external: [/\.css$/],
   },

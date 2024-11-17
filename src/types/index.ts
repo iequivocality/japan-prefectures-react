@@ -11,7 +11,8 @@ export type PrefectureType = {
 
 export type PrefectureTypeKey = "to" | "do" | "fu" | "ken";
 
-export type PrefectureCode = `JP-${Exclude<`${CodeTensPlace}${CodeNumbers}`, "00" | "48" | "49">}`;
+export type PrefectureCode =
+  `JP-${Exclude<`${CodeTensPlace}${CodeNumbers}`, "00" | "48" | "49">}`;
 
 export type Prefecture = {
   code: PrefectureCode;
@@ -20,7 +21,11 @@ export type Prefecture = {
   type: PrefectureType;
 };
 
-export type PrefectureNames = { code: PrefectureCode, name: string, type: string };
+export type PrefectureNames = {
+  code: PrefectureCode;
+  name: string;
+  type: string;
+};
 
 export type PrefectureFields = keyof Prefecture;
 

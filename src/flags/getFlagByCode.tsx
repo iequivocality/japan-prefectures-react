@@ -48,7 +48,13 @@ import Miyazaki from "./Miyazaki";
 import Kagoshima from "./Kagoshima";
 import Okinawa from "./Okinawa";
 
-export const getFlagByCode: (code: Prefecture["code"], props: PrefectureFlagProps) => ReactNode | undefined = (code: Prefecture["code"], props: PrefectureFlagProps) => {
+const getFlagByCode: (
+  code: Prefecture["code"],
+  props: PrefectureFlagProps,
+) => ReactNode | undefined = (
+  code: Prefecture["code"],
+  props: PrefectureFlagProps,
+) => {
   if (code === "JP-01") return <Hokkaido {...props} />;
   if (code === "JP-02") return <Aomori {...props} />;
   if (code === "JP-03") return <Iwate {...props} />;
@@ -96,6 +102,8 @@ export const getFlagByCode: (code: Prefecture["code"], props: PrefectureFlagProp
   if (code === "JP-45") return <Miyazaki {...props} />;
   if (code === "JP-46") return <Kagoshima {...props} />;
   if (code === "JP-47") return <Okinawa {...props} />;
-  
+
   return undefined;
 };
+
+export default getFlagByCode;

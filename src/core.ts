@@ -1,4 +1,10 @@
-import { Language, Prefecture, PrefectureNames, PrefectureType, PrefectureTypeKey } from "./types";
+import {
+  Language,
+  Prefecture,
+  PrefectureNames,
+  PrefectureType,
+  PrefectureTypeKey,
+} from "./types";
 
 export const prefectureTypes: Record<PrefectureTypeKey, PrefectureType> = {
   to: {
@@ -312,7 +318,9 @@ export function getPrefectureByCode(code: Prefecture["code"]) {
   return prefectures.find((prefecture) => prefecture.code === code);
 }
 
-export function getPrefecturesNamesByLanguage(language: Language): PrefectureNames[] {
+export function getPrefecturesNamesByLanguage(
+  language: Language,
+): PrefectureNames[] {
   if (language === "japanese") {
     return prefectures.map((prefecture) => ({
       code: prefecture.code,
