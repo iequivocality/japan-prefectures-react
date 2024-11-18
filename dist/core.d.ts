@@ -1,0 +1,10 @@
+import { CompletePrefecture, Language, Prefecture, PrefectureCode, PrefectureFields, PrefectureNames, PrefectureType, PrefectureTypeKey, Region, RegionKey } from "./types";
+export declare const regions: Record<RegionKey, Region>;
+export declare const prefectureTypes: Record<PrefectureTypeKey, PrefectureType>;
+export declare function getAllPrefectures(): Prefecture[];
+export declare function getPrefectureByKey<K extends PrefectureFields, V extends Prefecture[K] extends string ? Prefecture[K] : Prefecture[K] extends Region ? Region[keyof Region] : Prefecture[K] extends PrefectureType ? Prefecture[keyof Prefecture] : Prefecture[K] extends PrefectureCode[] ? PrefectureCode : string>(key: K, value: V): Prefecture | undefined;
+export declare function getPrefectureByCode(code: Prefecture["code"]): Prefecture | undefined;
+export declare function getCompletePrefectureByCode(code: Prefecture["code"]): CompletePrefecture | undefined;
+export declare function getPrefecturesByRegion(region: string): Prefecture[];
+export declare function getPrefecturesNamesByLanguage(language: Language): PrefectureNames[];
+export declare function getPrefecturesByType(type: PrefectureTypeKey): Prefecture[];

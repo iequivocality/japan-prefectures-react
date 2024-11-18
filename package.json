@@ -10,8 +10,12 @@
     "prettier": "pnpm exec prettier . --write",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iequivocality/japan-prefectures.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "iequivocality (https://github.com/iequivocality)",
   "license": "ISC",
   "devDependencies": {
     "@jest/globals": "^29.7.0",
@@ -39,12 +43,11 @@
     "typescript": "^5.6.3"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": ">=18.3.1",
+    "react-dom": ">=18.3.1"
   },
   "files": [
-    "dist",
-    "src"
+    "dist/*"
   ],
   "exclude": [
     "example"

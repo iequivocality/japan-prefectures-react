@@ -1,0 +1,11 @@
+{
+  "name": "japan-prefectures/flags",
+  "private": true,
+  "main": "../index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
