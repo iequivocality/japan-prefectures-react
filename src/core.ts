@@ -5,13 +5,14 @@ import {
   PrefectureCode,
   PrefectureFields,
   PrefectureNames,
+  PrefectureQueryValue,
   PrefectureType,
   PrefectureTypeKey,
   Region,
   RegionKey,
 } from "./types";
 
-export const regions: Record<RegionKey, Region> = {
+const regions: Record<RegionKey, Region> = {
   hokkaido: {
     key: "hokkaido",
     japanese: "北海道",
@@ -54,7 +55,7 @@ export const regions: Record<RegionKey, Region> = {
   },
 };
 
-export const prefectureTypes: Record<PrefectureTypeKey, PrefectureType> = {
+const prefectureTypes: Record<PrefectureTypeKey, PrefectureType> = {
   to: {
     key: "to",
     japanese: "都",
@@ -469,42 +470,34 @@ export function getAllPrefectures(): Prefecture[] {
   return prefectures;
 }
 
-export function getPrefectureByKey<
-  K extends PrefectureFields,
-  V extends Prefecture[K] extends string
-    ? Prefecture[K]
-    : Prefecture[K] extends Region
-      ? Region[keyof Region]
-      : Prefecture[K] extends PrefectureType
-        ? Prefecture[keyof Prefecture]
-        : Prefecture[K] extends PrefectureCode[]
-          ? PrefectureCode
-          : string,
->(key: K, value: V): Prefecture | undefined {
-  if (key === "region") {
+export function getPrefectureByCode(
+  code: Prefecture["code"],
+): Prefecture | undefined {
+  return prefectures.find((prefecture) => prefecture.code === code);
+}
+
+export function getPrefectureByField<
+  Field extends PrefectureFields,
+  Value extends PrefectureQueryValue<Field>,
+>(field: Field, value: Value): Prefecture | undefined {
+  if (field === "region") {
     return prefectures.find(
       (prefecture) =>
         prefecture.region.key === value ||
         prefecture.region.japanese === value ||
         prefecture.region.romaji === value,
     );
-  } else if (key === "type") {
+  } else if (field === "type") {
     return prefectures.find(
       (prefecture) =>
         prefecture.type.japanese === value || prefecture.type.romaji === value,
     );
-  } else if (key === "borders" && typeof value === "string") {
+  } else if (field === "borders" && typeof value === "string") {
     return prefectures.find((prefecture) =>
       prefecture.borders.includes(value as PrefectureCode),
     );
   }
-  return prefectures.find((prefecture) => prefecture[key] === value);
-}
-
-export function getPrefectureByCode(
-  code: Prefecture["code"],
-): Prefecture | undefined {
-  return getPrefectureByKey("code", code);
+  return prefectures.find((prefecture) => prefecture[field] === value);
 }
 
 export function getCompletePrefectureByCode(
@@ -516,7 +509,9 @@ export function getCompletePrefectureByCode(
       ...prefecture,
       borders: prefecture.borders
         .map((borderCode) => getPrefectureByCode(borderCode))
-        .filter((p) => !!p),
+        .filter(
+          (p: Prefecture | undefined): p is Prefecture => p !== undefined,
+        ),
     };
   }
   return undefined;

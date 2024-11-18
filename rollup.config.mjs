@@ -5,7 +5,7 @@ import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import replace from "@rollup/plugin-replace";
-import svg from 'rollup-plugin-svg'
+import svg from "rollup-plugin-svg";
 import packageJson from "./loadPackageJson.cjs";
 import generatePackageJson from "rollup-plugin-generate-package-json";
 
@@ -20,8 +20,8 @@ const commonPlugins = [
   typescript({ tsconfig: "./tsconfig.json", useTsconfigDeclarationDir: true }),
   terser(),
   svg({
-    base64: true
-  })
+    base64: true,
+  }),
 ];
 
 const subfolderPlugins = (folderName) => {

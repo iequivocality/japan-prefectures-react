@@ -1,11 +1,15 @@
-import { getAllPrefectures, getPrefectureByCode, getPrefectureByKey } from "../src/core";
+import {
+  getAllPrefectures,
+  getPrefectureByCode,
+  getPrefectureByField,
+} from "../src/core";
 
 describe("Japan Prefectures Core", () => {
   test("Test getAllPrefectures", () => {
     expect(getAllPrefectures().length).toBe(47);
   });
 
-  test("Test getPrefectureByKey", () => {
+  test("Test getPrefectureByField", () => {
     const hokkaido = {
       code: "JP-01",
       japanese: "北海道",
@@ -23,10 +27,11 @@ describe("Japan Prefectures Core", () => {
       borders: ["JP-02"],
     };
 
-    expect(getPrefectureByKey("code", "JP-01")).toStrictEqual(hokkaido);
-    expect(getPrefectureByKey("type", "do")).toStrictEqual(hokkaido);
-    expect(getPrefectureByKey("type", "道")).toStrictEqual(hokkaido);
-    expect(getPrefectureByKey("borders", "JP-02")).toStrictEqual(hokkaido);
+    expect(getPrefectureByField("code", "JP-01")).toStrictEqual(hokkaido);
+    expect(getPrefectureByField("type", "do")).toStrictEqual(hokkaido);
+    expect(getPrefectureByField("type", "道")).toStrictEqual(hokkaido);
+    expect(getPrefectureByField("region", "Hokkaidō")).toStrictEqual(hokkaido);
+    expect(getPrefectureByField("borders", "JP-02")).toStrictEqual(hokkaido);
   });
 
   test("Test getPrefectureByCode", () => {

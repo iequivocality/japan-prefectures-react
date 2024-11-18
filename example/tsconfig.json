@@ -11,7 +11,7 @@
     "declarationMap": true,
     "baseUrl": "./src",
     "paths": {
-      "japan-prefectures": ["../dist"]
+      "japan-prefectures-react": ["../dist"]
     }
   },
   "include": ["src"]

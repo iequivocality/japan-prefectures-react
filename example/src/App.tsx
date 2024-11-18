@@ -47,7 +47,7 @@ import {
   Miyazaki,
   Kagoshima,
   Okinawa,
-} from "japan-prefectures/dist/flags";
+} from "japan-prefectures-react/dist/flags";
 
 const App: React.FC = () => {
   return (
