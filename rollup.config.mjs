@@ -4,7 +4,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
-import copy from "rollup-plugin-copy";
 import replace from "@rollup/plugin-replace";
 import svg from 'rollup-plugin-svg'
 import packageJson from "./loadPackageJson.cjs";
@@ -81,12 +80,7 @@ export default [
         exports: "named",
       },
     ],
-    plugins: [
-      ...commonPlugins,
-      copy({
-        targets: [{ src: "src/assets/*", dest: "dist/assets" }],
-      }),
-    ],
+    plugins: commonPlugins,
     external: ["react", "react-dom"],
   },
   ...folderBuilds,
