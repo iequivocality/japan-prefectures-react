@@ -6,6 +6,7 @@ import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import copy from "rollup-plugin-copy";
 import replace from "@rollup/plugin-replace";
+import svg from 'rollup-plugin-svg'
 import packageJson from "./loadPackageJson.cjs";
 import generatePackageJson from "rollup-plugin-generate-package-json";
 
@@ -19,6 +20,9 @@ const commonPlugins = [
   commonjs(),
   typescript({ tsconfig: "./tsconfig.json", useTsconfigDeclarationDir: true }),
   terser(),
+  svg({
+    base64: true
+  })
 ];
 
 const subfolderPlugins = (folderName) => {
@@ -56,7 +60,7 @@ const folderBuilds = ["flags"].map((folder) => {
       },
     ],
     plugins: subfolderPlugins(folder),
-    external: ["react", "react-dom", /\.svg$/],
+    external: ["react", "react-dom"],
   };
 });
 
@@ -83,7 +87,7 @@ export default [
         targets: [{ src: "src/assets/*", dest: "dist/assets" }],
       }),
     ],
-    external: ["react", "react-dom", /\.svg$/],
+    external: ["react", "react-dom"],
   },
   ...folderBuilds,
   {

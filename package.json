@@ -36,6 +36,7 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-svg-import": "^3.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "ts-jest": "^29.2.5",
