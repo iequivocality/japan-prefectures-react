@@ -9,6 +9,7 @@ interface PrefectureProps {
     className?: string;
     onMouseEnter?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
     onMouseLeave?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+    onClick?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
 }
 interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
     className?: string;
