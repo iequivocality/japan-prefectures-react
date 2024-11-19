@@ -41,7 +41,9 @@ const subfolderPlugins = (folderName) => {
   ];
 };
 
-const folderBuilds = ["flags"].map((folder) => {
+const folders = ["flags", "maps"];
+
+const folderBuilds = folders.map((folder) => {
   return {
     input: `src/${folder}/index.ts`,
     output: [
@@ -60,6 +62,15 @@ const folderBuilds = ["flags"].map((folder) => {
     ],
     plugins: subfolderPlugins(folder),
     external: ["react", "react-dom"],
+  };
+});
+
+const typeDefBuilds = folders.map((folder) => {
+  return {
+    input: `src/${folder}/index.ts`,
+    output: [{ file: `dist/${folder}/index.d.ts` }],
+    plugins: [dts()],
+    external: [/\.css$/],
   };
 });
 
@@ -84,10 +95,5 @@ export default [
     external: ["react", "react-dom"],
   },
   ...folderBuilds,
-  {
-    input: "src/flags/index.ts",
-    output: [{ file: "dist/flags/index.d.ts" }],
-    plugins: [dts()],
-    external: [/\.css$/],
-  },
+  ...typeDefBuilds
 ];

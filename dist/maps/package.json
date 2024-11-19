@@ -1,0 +1,11 @@
+{
+  "name": "japan-prefectures-react/maps",
+  "private": true,
+  "main": "../index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
