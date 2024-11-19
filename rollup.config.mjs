@@ -41,7 +41,7 @@ const subfolderPlugins = (folderName) => {
   ];
 };
 
-const folders = ["flags", "maps"];
+const folders = ["flags", "maps", "types"];
 
 const folderBuilds = folders.map((folder) => {
   return {
