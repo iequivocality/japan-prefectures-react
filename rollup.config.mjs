@@ -95,5 +95,5 @@ export default [
     external: ["react", "react-dom"],
   },
   ...folderBuilds,
-  ...typeDefBuilds
+  ...typeDefBuilds,
 ];

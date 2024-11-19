@@ -5,15 +5,29 @@ export function getPrefectureFlagSize(
   height: number | undefined,
   defaultSize: Size,
 ) {
-  if (width && height) {
+  if (width !== undefined && height !== undefined) {
     return { width, height };
-  } else if (width && !height) {
+  } else if (width !== undefined && height === undefined) {
     // w / ? = dw / dh => w * dh / dw = ?
-    return { width, height: (width * defaultSize.height) / defaultSize.width };
-  } else if (!width && height) {
+    return getStylesFromWidthAndHeight(width, (width * defaultSize.height) / defaultSize.width);
+  } else if (height !== undefined) {
     // ? / h = dw / dh => dw * h / dh
-    return { width: (height * defaultSize.width) / defaultSize.height, height };
+    return getStylesFromWidthAndHeight((height * defaultSize.width) / defaultSize.height, height);
   } else {
     return defaultSize;
   }
+}
+
+function getStylesFromWidthAndHeight(width: number, height: number) {
+  return {
+    width,
+    height,
+    style: {
+      minHeight: height,
+      maxHeight: height,
+      minWidth: width,
+      maxWidth: width
+    }
+  }
+
 }
