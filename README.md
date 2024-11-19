@@ -129,6 +129,33 @@ console.log(getPrefectureByField("borders", "JP-02")); // { code: 'JP-01', japan
 console.log(getPrefectureByField("japanese", "")); // undefined
 ```
 
+## getCompletePrefectureByCode(code: Prefecture["code"])
+
+Same as getPrefectureByCode, but borders contains Prefecture[] for borders instead of PrefectureCode[].
+@returns Prefecture or undefined if any value other than Geocodes below is passed
+
+## getPrefecturesByRegion(region: string)
+
+Returns an array of prefectures by region. Region can be Romaji, Japanese or the following:
+
+"hokkaido" | "tohoku" | "kanto" | "chubu" | "kansai" | "chugoku" | "shikoku" | "kyushu"
+
+@returns {Prefecture[]}
+
+## getPrefecturesNamesByLanguage(language: Language)
+
+Returns an array of prefecture names by Language, where Language can be "japanese" or "romaji".
+The type and region of the prefectures by language are included in the returned array as well.
+@returns {PrefectureNames[]}
+
+## getPrefecturesByType(type: PrefectureTypeKey)
+
+Returns an array of prefectures by type. Type can be Romaji, Japanese or the following:
+
+"to" | "do" | "fu" | "ken"
+
+@returns {Prefecture[]}
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
