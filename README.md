@@ -174,7 +174,7 @@ Returns an array of regions. If withPrefectures is true, the regions will also i
 Returns a prefecture flag by its ISO 3166 or Geocode. You can refer to getPrefectureByCode for the list of Geocodes.
 @returns PrefectureFlagComponent or undefined if any value other than Geocodes below is passed
 
-## getFlagByPrefectureField(key: PrefectureFields, value: PrefectureQueryValue<PrefectureFields>, props: PrefectureFlagProps)
+### getFlagByPrefectureField(key: PrefectureFields, value: PrefectureQueryValue<PrefectureFields>, props: PrefectureFlagProps)
 
 Returns a prefecture by its field and value. For fields with type string (code, japanese, romaji), values must be a exact match.
 For fields that are objects (type, region), their fields (key, japanese and romaji) are used to match values. For the borders array field,
@@ -182,7 +182,20 @@ values must be a PrefectureCode and if found on the array, the prefecture is ret
 
 @returns PrefectureFlagComponent or undefined if no field with specified value is found based on defined field.
 
-You can also directly import the flags of each prefecture.
+### Prefecture Flag Components (PrefectureFlagComponent)
+
+You can also directly import the flags of each prefecture. Refs to their image elements are also supported.
+Aspect ratios are maintained. All flags are using type PrefectureFlagProps as props.
+
+```tsx
+
+type PrefectureFlagProps = {
+    height?: number;
+    width?: number;
+    className?: string;
+};
+
+```
 
 ```tsx
 import {
@@ -235,6 +248,74 @@ import {
   Yamanashi,
 } from "japan-prefectures-react";
 ```
+
+## Maps
+
+### Japan
+
+A map of Japan in SVG format. Refs to the main SVG element are also supported.
+
+#### Props
+
+##### className - string | undefined
+
+Assigned class name to the main SVG component.
+
+##### mapType - "full" | "dense" | "deform" | undefined
+
+- *full* - Shows the full map of Japan with Okinawa in its relative position to Japan.
+- *dense* - Okinawa is displayed as an inset on the lower right corner of the map.
+- *deform* - All prefectures are displayed in a deformed map, with less detail
+
+##### prefectureProps?: PrefectureMapProps
+
+Contains properties and callbacks for each prefecture path element. *in progress*
+
+##### prefectureClassNames?: PartialRecord<PrefectureCode, string>
+
+Assigns custom class names to each prefecture's path element.
+
+##### prefectureOutlineStyle?
+
+Assigns custom stroke color and width to the prefecture outlines.
+
+```tsx
+{
+  strokeColor?: string;
+  strokeWidth?: string;
+}
+```
+
+##### dividerStrokeStyle?: 
+
+Assigns custom stroke color and width to the divider, which separates inset of Okinawa from the rest of Japan and are only visible when mapType is "dense".
+
+```tsx
+{
+  strokeColor?: string;
+  strokeWidth?: string;
+}
+```
+
+```tsx
+
+interface PrefectureMapProps {
+    className?: string;
+    onMouseEnter?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+    onMouseLeave?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+    onClick?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+    onMouseOver?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+}
+
+```
+
+## Types Reference
+
+For Typescript users, feel free to peruse the type declarations in the following files.
+
+- [Core](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/core.d.ts)
+- [Flags](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/flags/index.d.ts)
+- [Maps](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/maps/index.d.ts)
 
 ## Attribution
 
