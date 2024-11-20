@@ -10,6 +10,7 @@ const Ehime: PrefectureFlagComponent = forwardRef<
   const newClassname = `prefecture-flag ehime ${className ?? ""}`;
   return (
     <img
+      id="prefecture-flag-jp-38"
       src={Flag}
       ref={ref}
       className={newClassname}

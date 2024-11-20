@@ -10,6 +10,7 @@ const Yamaguchi: PrefectureFlagComponent = forwardRef<
   const newClassname = `prefecture-flag yamaguchi ${className ?? ""}`;
   return (
     <img
+      id="prefecture-flag-jp-35"
       src={Flag}
       ref={ref}
       className={newClassname}

@@ -23,7 +23,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="font-sans dark:text-slate-200 py-20">
+    <main className="font-sans dark:text-slate-200 py-20 flex flex-col items-center gap-y-8 min-w-screen">
       <h2 className="text-center text-2xl font-bold mb-4">Map of Japan</h2>
       <section className="text-center capitalize flex flex-col items-center">
         <h3>Selected Prefecture</h3>
@@ -32,13 +32,13 @@ const App: React.FC = () => {
             ? getFlagByCode(hoveredPrefecture.code, { width: 24 })
             : null}
           {hoveredPrefecture
-            ? `${hoveredPrefecture.code}: ${hoveredPrefecture.romaji} (${hoveredPrefecture.japanese})`
+            ? `${hoveredPrefecture.code}: ${hoveredPrefecture.romaji} (${hoveredPrefecture.japanese}${hoveredPrefecture.code === "JP-01" ? "" : hoveredPrefecture.type.japanese})`
             : "None"}
         </div>
       </section>
       <section className="flex justify-center items-center">
         <Japan
-          width={500}
+          height={600}
           className="stroke-slate-400 fill-slate-100"
           prefectureProps={{
             className:
@@ -46,6 +46,7 @@ const App: React.FC = () => {
             onMouseEnter,
             onMouseLeave,
           }}
+          mapType="deform"
         />
       </section>
       <h2 className="text-center text-2xl font-bold mb-4">

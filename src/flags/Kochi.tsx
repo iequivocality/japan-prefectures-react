@@ -11,6 +11,7 @@ const Kochi: PrefectureFlagComponent = forwardRef<
 
   return (
     <img
+      id="prefecture-flag-jp-39"
       src={Flag}
       ref={ref}
       className={newClassname}

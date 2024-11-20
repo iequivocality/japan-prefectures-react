@@ -10,6 +10,7 @@ const Toyama: PrefectureFlagComponent = forwardRef<
   const newClassname = `prefecture-flag toyama ${className ?? ""}`;
   return (
     <img
+      id="prefecture-flag-jp-16"
       src={Flag}
       ref={ref}
       className={newClassname}

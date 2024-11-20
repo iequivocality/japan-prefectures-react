@@ -1,8 +1,13 @@
-import { SVGProps, forwardRef } from "react";
+import { ReactNode, SVGProps, forwardRef } from "react";
 import { PartialRecord, PrefectureCode } from "../types";
 import { getAllPrefectures } from "../core";
 import { MapType } from "./types";
-import { mapData, prefectureData } from "./prefecture";
+import {
+  dividerData,
+  mapData,
+  prefectureData,
+  prefectureOutline,
+} from "./data";
 
 export interface PrefectureMapProps {
   className?: string;
@@ -29,7 +34,25 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
   mapType?: MapType;
   prefectureProps?: PrefectureMapProps;
   prefectureClassNames?: PartialRecord<PrefectureCode, string>;
+  prefectureOutlineStyle?: {
+    strokeColor?: string;
+    strokeWidth?: string;
+  };
+  dividerStrokeStyle?: {
+    strokeColor?: string;
+    strokeWidth?: string;
+  };
 }
+
+const defaultDividerStrokeStyle = {
+  strokeColor: "#666666",
+  strokeWidth: "2",
+};
+
+const defaultPrefectureOutlineStyle = {
+  strokeColor: "#333333",
+  strokeWidth: "1",
+};
 
 const defaultClassnames: PartialRecord<PrefectureCode, string> = {
   "JP-01": "",
@@ -89,6 +112,8 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       mapType,
       prefectureProps,
       prefectureClassNames,
+      prefectureOutlineStyle,
+      dividerStrokeStyle,
       ...restProps
     } = props;
     const mt = mapType ?? "full";
@@ -116,6 +141,48 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
         .filter((p) => p)
         .join(" "),
     });
+
+    let divider: ReactNode | null = null;
+    if (mapType === "dense") {
+      divider = (
+        <polyline
+          id="divider"
+          fill="none"
+          stroke={
+            dividerStrokeStyle?.strokeColor ??
+            defaultDividerStrokeStyle.strokeColor
+          }
+          strokeWidth={
+            dividerStrokeStyle?.strokeWidth ??
+            defaultDividerStrokeStyle.strokeWidth
+          }
+          points={dividerData[mt]}
+        ></polyline>
+      );
+    }
+
+    const strokes = (
+      <g id="map-of-japan-strokes">
+        <path
+          className="map-of-japan-stroke"
+          fill={
+            prefectureOutlineStyle?.strokeColor ??
+            defaultPrefectureOutlineStyle.strokeColor
+          }
+          stroke={
+            prefectureOutlineStyle?.strokeColor ??
+            defaultPrefectureOutlineStyle.strokeColor
+          }
+          strokeWidth={
+            prefectureOutlineStyle?.strokeWidth ??
+            defaultPrefectureOutlineStyle.strokeWidth
+          }
+          d={prefectureOutline[mt]}
+        ></path>
+        {divider}
+      </g>
+    );
+
     return (
       <svg
         version="1.1"
@@ -132,10 +199,11 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
           .filter((p) => p)
           .join(" ")}
       >
+        {strokes}
         {prefectures.map((prefecture) => {
           return (
             <path
-              id={`prefecture-${prefecture.code.toLowerCase()}`}
+              id={`prefecture-map-${prefecture.code.toLowerCase()}`}
               data-code={prefecture.code}
               data-region={prefecture.region.key}
               data-name={prefecture.romaji}

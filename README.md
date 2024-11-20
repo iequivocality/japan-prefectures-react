@@ -18,7 +18,7 @@ yarn add japan-prefectures-react
 pnpm add japan-prefectures-react
 ```
 
-## Usage
+## Core
 
 ### getAllPrefectures()
 
@@ -107,7 +107,8 @@ console.log(getPrefectureByCode(13)); // undefined
 ### getPrefectureByField(key: PrefectureFields, value: PrefectureQueryValue<PrefectureFields>)
 
 Returns a prefecture by its field and value. For fields with type string (code, japanese, romaji), values must be a exact match.
-For fields that are objects (type, region), their fields (key, japanese and romaji) are used to match values. For the borders array field, values must be a PrefectureCode and if found on the array, the prefecture is returned.
+For fields that are objects (type, region), their fields (key, japanese and romaji) are used to match values. For the borders array field, values
+must be a PrefectureCode and if found on the array, the prefecture is returned.
 
 @returns Prefecture or undefined if no field with specified value is found based on defined field
 
@@ -165,6 +166,75 @@ Returns an array of prefectures by type. Type can be Romaji, Japanese or the fol
 Returns an array of regions. If withPrefectures is true, the regions will also include the list of their prefectures.
 
 @returns {Region[] | RegionWithPrefectures[]}
+
+## Flags
+
+### getFlagByCode(code: Prefecture["code"], props: PrefectureFlagProps)
+
+Returns a prefecture flag by its ISO 3166 or Geocode. You can refer to getPrefectureByCode for the list of Geocodes.
+@returns PrefectureFlagComponent or undefined if any value other than Geocodes below is passed
+
+## getFlagByPrefectureField(key: PrefectureFields, value: PrefectureQueryValue<PrefectureFields>, props: PrefectureFlagProps)
+
+Returns a prefecture by its field and value. For fields with type string (code, japanese, romaji), values must be a exact match.
+For fields that are objects (type, region), their fields (key, japanese and romaji) are used to match values. For the borders array field,
+values must be a PrefectureCode and if found on the array, the prefecture is returned. You can refer to getPrefectureByField for the list of fields.
+
+@returns PrefectureFlagComponent or undefined if no field with specified value is found based on defined field.
+
+You can also directly import the flags of each prefecture.
+
+```tsx
+import {
+  Aichi,
+  Akita,
+  Aomori,
+  Chiba,
+  Ehime,
+  Fukui,
+  Fukuoka,
+  Fukushima,
+  Gifu,
+  Gunma,
+  Hiroshima,
+  Hokkaido,
+  Hyogo,
+  Ibaraki,
+  Ishikawa,
+  Iwate,
+  Kagawa,
+  Kagoshima,
+  Kanagawa,
+  Kochi,
+  Kumamoto,
+  Kyoto,
+  Mie,
+  Miyagi,
+  Miyazaki,
+  Nagano,
+  Nagasaki,
+  Nara,
+  Niigata,
+  Oita,
+  Okayama,
+  Okinawa,
+  Osaka,
+  Saga,
+  Saitama,
+  Shiga,
+  Shimane,
+  Shizuoka,
+  Tochigi,
+  Tokushima,
+  Tokyo,
+  Tottori,
+  Toyama,
+  Wakayama,
+  Yamagata,
+  Yamaguchi,
+  Yamanashi,
+} from "japan-prefectures-react";
+```
 
 ## Attribution
 
