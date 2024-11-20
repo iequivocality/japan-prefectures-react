@@ -106,7 +106,8 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       onClick: (event) =>
         prefectureProps?.onClick && prefectureProps.onClick(prefecture, event),
       onMouseOver: (event) =>
-        prefectureProps?.onMouseOver && prefectureProps.onMouseOver(prefecture, event),
+        prefectureProps?.onMouseOver &&
+        prefectureProps.onMouseOver(prefecture, event),
       className: [
         "prefecture",
         prefectureProps?.className,

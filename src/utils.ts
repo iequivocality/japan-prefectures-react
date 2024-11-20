@@ -13,29 +13,39 @@ export function getSizeWithAspectRatio(
     return getStylesFromWidthAndHeight(
       width,
       (width * defaultSize.height) / defaultSize.width,
-      includeStyle
+      includeStyle,
     );
   } else if (height !== undefined) {
     // ? / h = dw / dh => dw * h / dh
     return getStylesFromWidthAndHeight(
       (height * defaultSize.width) / defaultSize.height,
       height,
-      includeStyle
+      includeStyle,
     );
   } else {
-    return getStylesFromWidthAndHeight(defaultSize.width, defaultSize.height, includeStyle);
+    return getStylesFromWidthAndHeight(
+      defaultSize.width,
+      defaultSize.height,
+      includeStyle,
+    );
   }
 }
 
-function getStylesFromWidthAndHeight(width: number, height: number, includeStyle: boolean) {
+function getStylesFromWidthAndHeight(
+  width: number,
+  height: number,
+  includeStyle: boolean,
+) {
   return {
     width,
     height,
-    style: includeStyle ? {
-      minHeight: height,
-      maxHeight: height,
-      minWidth: width,
-      maxWidth: width,
-    } : {},
+    style: includeStyle
+      ? {
+          minHeight: height,
+          maxHeight: height,
+          minWidth: width,
+          maxWidth: width,
+        }
+      : {},
   };
 }
