@@ -8,7 +8,7 @@ import {
   Region,
 } from "../types";
 import getFlagByCode from "./getFlagByCode";
-import { PrefectureFlagProps } from "./types";
+import { PrefectureFlagComponent, PrefectureFlagProps } from "./types";
 
 export default function getFlagByPrefectureField<
   K extends PrefectureFields,

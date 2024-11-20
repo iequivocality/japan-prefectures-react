@@ -1,21 +1,22 @@
-import React, { forwardRef } from "react";
-import { PrefectureFlagProps } from "./types";
-import { getPrefectureFlagSize } from "./utils";
+import { forwardRef } from "react";
+import { PrefectureFlagComponent, PrefectureFlagProps } from "./types";
+import { getSizeWithAspectRatio } from "../utils";
 import Flag from "../assets/nara.svg";
 
-const Nara = forwardRef<HTMLImageElement, PrefectureFlagProps>(
-  ({ width, height, className }, ref) => {
-    const newClassname = `prefecture-flag nara ${className ?? ""}`;
-    return (
-      <img
-        src={Flag}
-        ref={ref}
-        className={newClassname}
-        {...getPrefectureFlagSize(width, height, { width: 300, height: 200 })}
-      ></img>
-    );
-  },
-);
+const Nara: PrefectureFlagComponent = forwardRef<
+  HTMLImageElement,
+  PrefectureFlagProps
+>(({ width, height, className }, ref) => {
+  const newClassname = `prefecture-flag nara ${className ?? ""}`;
+  return (
+    <img
+      src={Flag}
+      ref={ref}
+      className={newClassname}
+      {...getSizeWithAspectRatio(width, height, { width: 300, height: 200 })}
+    ></img>
+  );
+});
 
 Nara.displayName = "Nara";
 

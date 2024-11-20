@@ -1,105 +1,106 @@
-import * as React from 'react';
-import React__default, { ReactNode } from 'react';
+import * as react from 'react';
+import { ReactNode } from 'react';
 
 type PrefectureFlagProps = {
     height?: number;
     width?: number;
     className?: string;
 };
+type PrefectureFlagComponent = React.ForwardRefExoticComponent<PrefectureFlagProps & React.RefAttributes<HTMLImageElement>>;
 
-declare const Aomori: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Aomori: PrefectureFlagComponent;
 
-declare const Hokkaido: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Hokkaido: PrefectureFlagComponent;
 
-declare const Iwate: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Iwate: PrefectureFlagComponent;
 
-declare const Miyagi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Miyagi: PrefectureFlagComponent;
 
-declare const Akita: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Akita: PrefectureFlagComponent;
 
-declare const Yamagata: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Yamagata: PrefectureFlagComponent;
 
-declare const Fukushima: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Fukushima: PrefectureFlagComponent;
 
-declare const Ibaraki: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Ibaraki: PrefectureFlagComponent;
 
-declare const Tochigi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Tochigi: PrefectureFlagComponent;
 
-declare const Gunma: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Gunma: PrefectureFlagComponent;
 
-declare const Saitama: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Saitama: PrefectureFlagComponent;
 
-declare const Chiba: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Chiba: PrefectureFlagComponent;
 
-declare const Tokyo: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Tokyo: PrefectureFlagComponent;
 
-declare const Kanagawa: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kanagawa: PrefectureFlagComponent;
 
-declare const Niigata: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Niigata: PrefectureFlagComponent;
 
-declare const Toyama: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Toyama: PrefectureFlagComponent;
 
-declare const Ishikawa: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Ishikawa: PrefectureFlagComponent;
 
-declare const Fukui: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Fukui: PrefectureFlagComponent;
 
-declare const Yamanashi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Yamanashi: PrefectureFlagComponent;
 
-declare const Nagano: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Nagano: PrefectureFlagComponent;
 
-declare const Gifu: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Gifu: PrefectureFlagComponent;
 
-declare const Shizuoka: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Shizuoka: PrefectureFlagComponent;
 
-declare const Aichi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Aichi: PrefectureFlagComponent;
 
-declare const Mie: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Mie: PrefectureFlagComponent;
 
-declare const Shiga: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Shiga: PrefectureFlagComponent;
 
-declare const Kyoto: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kyoto: PrefectureFlagComponent;
 
-declare const Osaka: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Osaka: PrefectureFlagComponent;
 
-declare const Hyogo: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Hyogo: PrefectureFlagComponent;
 
-declare const Nara: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Nara: PrefectureFlagComponent;
 
-declare const Wakayama: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Wakayama: PrefectureFlagComponent;
 
-declare const Tottori: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Tottori: PrefectureFlagComponent;
 
-declare const Shimane: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Shimane: PrefectureFlagComponent;
 
-declare const Okayama: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Okayama: PrefectureFlagComponent;
 
-declare const Hiroshima: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Hiroshima: PrefectureFlagComponent;
 
-declare const Yamaguchi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Yamaguchi: PrefectureFlagComponent;
 
-declare const Tokushima: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Tokushima: PrefectureFlagComponent;
 
-declare const Kagawa: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kagawa: PrefectureFlagComponent;
 
-declare const Ehime: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Ehime: PrefectureFlagComponent;
 
-declare const Kochi: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kochi: PrefectureFlagComponent;
 
-declare const Fukuoka: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Fukuoka: PrefectureFlagComponent;
 
-declare const Saga: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Saga: PrefectureFlagComponent;
 
-declare const Nagasaki: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Nagasaki: PrefectureFlagComponent;
 
-declare const Kumamoto: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kumamoto: PrefectureFlagComponent;
 
-declare const Oita: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Oita: PrefectureFlagComponent;
 
-declare const Miyazaki: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Miyazaki: PrefectureFlagComponent;
 
-declare const Kagoshima: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Kagoshima: PrefectureFlagComponent;
 
-declare const Okinawa: React__default.ForwardRefExoticComponent<PrefectureFlagProps & React__default.RefAttributes<HTMLImageElement>>;
+declare const Okinawa: PrefectureFlagComponent;
 
 type CodeNumbers = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 type CodeTensPlace = Exclude<CodeNumbers, "5" | "6" | "7" | "8" | "9">;
@@ -129,6 +130,6 @@ type PrefectureQueryValue<Key extends PrefectureFields> = Prefecture[Key] extend
 
 declare const getFlagByCode: (code: Prefecture["code"], props: PrefectureFlagProps) => ReactNode | undefined;
 
-declare function getFlagByPrefectureField<K extends PrefectureFields, V extends PrefectureQueryValue<K>>(key: K, value: V, props: PrefectureFlagProps): React.ReactNode;
+declare function getFlagByPrefectureField<K extends PrefectureFields, V extends PrefectureQueryValue<K>>(key: K, value: V, props: PrefectureFlagProps): react.ReactNode;
 
 export { Aichi, Akita, Aomori, Chiba, Ehime, Fukui, Fukuoka, Fukushima, Gifu, Gunma, Hiroshima, Hokkaido, Hyogo, Ibaraki, Ishikawa, Iwate, Kagawa, Kagoshima, Kanagawa, Kochi, Kumamoto, Kyoto, Mie, Miyagi, Miyazaki, Nagano, Nagasaki, Nara, Niigata, Oita, Okayama, Okinawa, Osaka, Saga, Saitama, Shiga, Shimane, Shizuoka, Tochigi, Tokushima, Tokyo, Tottori, Toyama, Wakayama, Yamagata, Yamaguchi, Yamanashi, getFlagByCode, getFlagByPrefectureField };

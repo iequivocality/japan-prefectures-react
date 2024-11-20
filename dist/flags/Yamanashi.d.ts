@@ -1,4 +1,3 @@
-import React from "react";
-import { PrefectureFlagProps } from "./types";
-declare const Yamanashi: React.ForwardRefExoticComponent<PrefectureFlagProps & React.RefAttributes<HTMLImageElement>>;
+import { PrefectureFlagComponent } from "./types";
+declare const Yamanashi: PrefectureFlagComponent;
 export default Yamanashi;

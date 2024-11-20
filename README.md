@@ -133,12 +133,12 @@ console.log(getPrefectureByField("borders", "JP-02")); // { code: 'JP-01', japan
 console.log(getPrefectureByField("japanese", "")); // undefined
 ```
 
-## getCompletePrefectureByCode(code: Prefecture["code"])
+### getCompletePrefectureByCode(code: Prefecture["code"])
 
 Same as getPrefectureByCode, but borders contains Prefecture[] for borders instead of PrefectureCode[].
 @returns Prefecture or undefined if any value other than Geocodes below is passed
 
-## getPrefecturesByRegion(region: string)
+### getPrefecturesByRegion(region: string)
 
 Returns an array of prefectures by region. Region can be Romaji, Japanese or the following:
 
@@ -146,13 +146,13 @@ Returns an array of prefectures by region. Region can be Romaji, Japanese or the
 
 @returns {Prefecture[]}
 
-## getPrefecturesNamesByLanguage(language: Language)
+### getPrefecturesNamesByLanguage(language: Language)
 
 Returns an array of prefecture names by Language, where Language can be "japanese" or "romaji".
 The type and region of the prefectures by language are included in the returned array as well.
 @returns {PrefectureNames[]}
 
-## getPrefecturesByType(type: PrefectureTypeKey)
+### getPrefecturesByType(type: PrefectureTypeKey)
 
 Returns an array of prefectures by type. Type can be Romaji, Japanese or the following:
 
@@ -160,11 +160,16 @@ Returns an array of prefectures by type. Type can be Romaji, Japanese or the fol
 
 @returns {Prefecture[]}
 
-## getAllRegions({ withPrefectures: boolean })
+### getAllRegions({ withPrefectures: boolean })
 
 Returns an array of regions. If withPrefectures is true, the regions will also include the list of their prefectures.
 
 @returns {Region[] | RegionWithPrefectures[]}
+
+## Attribution
+
+- Prefectures flags are from [Wikimedia Commons](https://commons.wikimedia.org/)
+- Map of Japan is from [ka215/svg-japan](https://github.com/ka215/svg-japan)
 
 ## License
 

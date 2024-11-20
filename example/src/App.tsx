@@ -38,6 +38,7 @@ const App: React.FC = () => {
       </section>
       <section className="flex justify-center items-center">
         <Japan
+          width={500}
           className="stroke-slate-400 fill-slate-100"
           prefectureProps={{
             className:

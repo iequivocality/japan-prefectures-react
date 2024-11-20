@@ -1,4 +1,3 @@
-import React from "react";
-import { PrefectureFlagProps } from "./types";
-declare const Hokkaido: React.ForwardRefExoticComponent<PrefectureFlagProps & React.RefAttributes<HTMLImageElement>>;
+import { PrefectureFlagComponent } from "./types";
+declare const Hokkaido: PrefectureFlagComponent;
 export default Hokkaido;
