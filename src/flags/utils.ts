@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 import { Size } from "./types";
 
 export function getPrefectureFlagSize(
@@ -9,16 +10,25 @@ export function getPrefectureFlagSize(
     return { width, height };
   } else if (width !== undefined && height === undefined) {
     // w / ? = dw / dh => w * dh / dw = ?
-    return getStylesFromWidthAndHeight(width, (width * defaultSize.height) / defaultSize.width);
+    return getStylesFromWidthAndHeight(
+      width,
+      (width * defaultSize.height) / defaultSize.width,
+    );
   } else if (height !== undefined) {
     // ? / h = dw / dh => dw * h / dh
-    return getStylesFromWidthAndHeight((height * defaultSize.width) / defaultSize.height, height);
+    return getStylesFromWidthAndHeight(
+      (height * defaultSize.width) / defaultSize.height,
+      height,
+    );
   } else {
-    return defaultSize;
+    return getStylesFromWidthAndHeight(defaultSize.width, defaultSize.height);
   }
 }
 
-function getStylesFromWidthAndHeight(width: number, height: number) {
+function getStylesFromWidthAndHeight(
+  width: number,
+  height: number,
+): Pick<SVGProps<SVGSVGElement>, "width" | "height" | "style"> {
   return {
     width,
     height,
@@ -26,8 +36,7 @@ function getStylesFromWidthAndHeight(width: number, height: number) {
       minHeight: height,
       maxHeight: height,
       minWidth: width,
-      maxWidth: width
-    }
-  }
-
+      maxWidth: width,
+    },
+  };
 }

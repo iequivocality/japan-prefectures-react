@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-import { getAllPrefectures, getFlagByCode, getPrefectureByCode, Japan, Prefecture } from "japan-prefectures-react";
+import {
+  getAllPrefectures,
+  getFlagByCode,
+  getPrefectureByCode,
+  Japan,
+  Prefecture,
+} from "japan-prefectures-react";
 import { PrefectureCode } from "japan-prefectures-react/dist/types";
 
 const App: React.FC = () => {
   const prefectures = getAllPrefectures();
-  const [hoveredPrefecture, setHoveredPrefecture] = useState<Prefecture | null>(null);
+  const [hoveredPrefecture, setHoveredPrefecture] = useState<Prefecture | null>(
+    null,
+  );
 
   const onMouseEnter = (prefectureCode: PrefectureCode) => {
     setHoveredPrefecture(getPrefectureByCode(prefectureCode) ?? null);
-  }
+  };
 
   const onMouseLeave = (prefectureCode: PrefectureCode) => {
     setHoveredPrefecture(null);
-  }
+  };
 
   return (
     <main className="font-sans dark:text-slate-200 py-20">
@@ -20,8 +28,12 @@ const App: React.FC = () => {
       <section className="text-center capitalize flex flex-col items-center">
         <h3>Selected Prefecture</h3>
         <div className="flex items-center gap-x-2">
-          {hoveredPrefecture ? getFlagByCode(hoveredPrefecture.code, { width: 24 }) : null}
-          {hoveredPrefecture ? `${hoveredPrefecture.code}: ${hoveredPrefecture.romaji} (${hoveredPrefecture.japanese})` : "None"}
+          {hoveredPrefecture
+            ? getFlagByCode(hoveredPrefecture.code, { width: 24 })
+            : null}
+          {hoveredPrefecture
+            ? `${hoveredPrefecture.code}: ${hoveredPrefecture.romaji} (${hoveredPrefecture.japanese})`
+            : "None"}
         </div>
       </section>
       <section className="flex justify-center items-center">
@@ -31,7 +43,7 @@ const App: React.FC = () => {
             className:
               "transition-all stroke-slate-400 fill-white hover:fill-red-500",
             onMouseEnter,
-            onMouseLeave
+            onMouseLeave,
           }}
         />
       </section>

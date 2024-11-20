@@ -88,9 +88,14 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
     const createCommonPrefectureProps = (
       prefecture: PrefectureCode,
     ): SVGProps<SVGPathElement> => ({
-      onMouseEnter: (event) => prefectureProps?.onMouseEnter && prefectureProps.onMouseEnter(prefecture, event),
-      onMouseLeave: (event) => prefectureProps?.onMouseLeave && prefectureProps.onMouseLeave(prefecture, event),
-      onClick: (event) => prefectureProps?.onClick && prefectureProps.onClick(prefecture, event),
+      onMouseEnter: (event) =>
+        prefectureProps?.onMouseEnter &&
+        prefectureProps.onMouseEnter(prefecture, event),
+      onMouseLeave: (event) =>
+        prefectureProps?.onMouseLeave &&
+        prefectureProps.onMouseLeave(prefecture, event),
+      onClick: (event) =>
+        prefectureProps?.onClick && prefectureProps.onClick(prefecture, event),
       className: [
         "prefecture",
         prefectureProps?.className,

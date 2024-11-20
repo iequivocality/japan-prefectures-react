@@ -10,6 +10,7 @@ import {
   PrefectureTypeKey,
   Region,
   RegionKey,
+  RegionWithPrefectures,
 } from "./types";
 
 const regions: Record<RegionKey, Region> = {
@@ -546,4 +547,23 @@ export function getPrefecturesNamesByLanguage(
 
 export function getPrefecturesByType(type: PrefectureTypeKey): Prefecture[] {
   return prefectures.filter((prefecture) => prefecture.type.romaji === type);
+}
+
+export function getAllRegions(
+  { withPrefectures }: { withPrefectures: boolean } = {
+    withPrefectures: false,
+  },
+): Region[] | RegionWithPrefectures[] {
+  return Object.keys(regions).map((key) => {
+    const region = regions[key as RegionKey];
+    if (withPrefectures) {
+      return {
+        ...region,
+        prefectures: prefectures.filter(
+          (prefecture) => prefecture.region.key === key,
+        ),
+      };
+    }
+    return region;
+  });
 }

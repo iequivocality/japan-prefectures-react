@@ -2,6 +2,10 @@
 
 Utility for Japanese prefectures, also includes React components for their flags. Typescript support included.
 
+> [!WARNING]  
+> This is still a work in progress, please do not use in production!
+> Breaking changes are expected.
+
 ## Requirements
 
 - React 18 and above
@@ -155,6 +159,12 @@ Returns an array of prefectures by type. Type can be Romaji, Japanese or the fol
 "to" | "do" | "fu" | "ken"
 
 @returns {Prefecture[]}
+
+## getAllRegions({ withPrefectures: boolean })
+
+Returns an array of regions. If withPrefectures is true, the regions will also include the list of their prefectures.
+
+@returns {Region[] | RegionWithPrefectures[]}
 
 ## License
 

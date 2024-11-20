@@ -42,6 +42,10 @@ export type Region = {
   romaji: string;
 };
 
+export type RegionWithPrefectures = Region & {
+  prefectures: Prefecture[];
+};
+
 export type RegionKey =
   | "hokkaido"
   | "tohoku"

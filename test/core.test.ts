@@ -9,6 +9,17 @@ describe("Japan Prefectures Core", () => {
     expect(getAllPrefectures().length).toBe(47);
   });
 
+  test("Test getPrefectureByCode", () => {
+    expect(getPrefectureByCode("JP-01")).toBeDefined();
+    expect(getPrefectureByCode("JP-01")?.romaji).toStrictEqual("Hokkaidō");
+
+    expect(getPrefectureByCode("JP-13")).toBeDefined();
+    expect(getPrefectureByCode("JP-13")?.romaji).toStrictEqual("Tokyo");
+
+    expect(getPrefectureByCode("JP-47")).toBeDefined();
+    expect(getPrefectureByCode("JP-47")?.romaji).toStrictEqual("Okinawa");
+  });
+
   test("Test getPrefectureByField", () => {
     const hokkaido = {
       code: "JP-01",
@@ -34,14 +45,23 @@ describe("Japan Prefectures Core", () => {
     expect(getPrefectureByField("borders", "JP-02")).toStrictEqual(hokkaido);
   });
 
-  test("Test getPrefectureByCode", () => {
-    expect(getPrefectureByCode("JP-01")).toBeDefined();
-    expect(getPrefectureByCode("JP-01")?.romaji).toStrictEqual("Hokkaidō");
+  test("Test getCompletePrefectureByCode", () => {
+    // TODO
+  });
 
-    expect(getPrefectureByCode("JP-13")).toBeDefined();
-    expect(getPrefectureByCode("JP-13")?.romaji).toStrictEqual("Tokyo");
+  test("Test getPrefecturesByRegion", () => {
+    // TODO
+  });
 
-    expect(getPrefectureByCode("JP-47")).toBeDefined();
-    expect(getPrefectureByCode("JP-47")?.romaji).toStrictEqual("Okinawa");
+  test("Test getPrefecturesNamesByLanguage", () => {
+    // TODO
+  });
+
+  test("Test getPrefecturesByType", () => {
+    // TODO
+  });
+
+  test("Test getAllRegions", () => {
+    // TODO
   });
 });
