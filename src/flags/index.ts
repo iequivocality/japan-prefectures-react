@@ -48,3 +48,5 @@ export { default as Okinawa } from "./Okinawa";
 
 export { default as getFlagByCode } from "./getFlagByCode";
 export { default as getFlagByPrefectureField } from "./getFlagByPrefectureField";
+
+export * from "./types";

@@ -9,6 +9,13 @@ type PartialRecord<K extends keyof any, T> = {
 };
 
 type MapType = "full" | "dense" | "deform";
+type MapTypeData = {
+    [key in MapType]: string;
+};
+type MapSVGAttributes = {
+    viewBox: MapTypeData;
+    enableBackground: MapTypeData;
+};
 
 interface PrefectureMapProps {
     className?: string;
@@ -33,4 +40,4 @@ interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
 }
 declare const Japan: react.ForwardRefExoticComponent<Omit<MapOfJapanProps, "ref"> & react.RefAttributes<SVGSVGElement>>;
 
-export { Japan, type MapOfJapanProps, type PrefectureMapProps };
+export { Japan, type MapOfJapanProps, type MapSVGAttributes, type MapType, type MapTypeData, type PrefectureMapProps };

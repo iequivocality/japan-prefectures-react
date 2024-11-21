@@ -4,15 +4,18 @@ import {
   getFlagByCode,
   getPrefectureByCode,
   Japan,
+  MapType,
   Prefecture,
+  PrefectureCode,
 } from "japan-prefectures-react";
-import { PrefectureCode } from "japan-prefectures-react/dist/types";
+import { MapTypeCombobox } from "./MapTypeCombobox";
 
 const App: React.FC = () => {
   const prefectures = getAllPrefectures();
   const [hoveredPrefecture, setHoveredPrefecture] = useState<Prefecture | null>(
     null,
   );
+  const [mapType, setMapType] = useState<MapType>("full");
 
   const onMouseEnter = (prefectureCode: PrefectureCode) => {
     setHoveredPrefecture(getPrefectureByCode(prefectureCode) ?? null);
@@ -38,7 +41,7 @@ const App: React.FC = () => {
       </section>
       <section className="flex justify-center items-center">
         <Japan
-          height={600}
+          height={400}
           className="stroke-slate-400 fill-slate-100"
           prefectureProps={{
             className:
@@ -46,8 +49,12 @@ const App: React.FC = () => {
             onMouseEnter,
             onMouseLeave,
           }}
-          mapType="deform"
+          mapType={mapType}
         />
+      </section>
+      <section className="flex justify-center items-center gap-x-4">
+        <h4 className="text-center font-bold">Map Type</h4>
+        <MapTypeCombobox selectedMapType={mapType} setMapType={setMapType} />
       </section>
       <h2 className="text-center text-2xl font-bold mb-4">
         Prefectures of Japan

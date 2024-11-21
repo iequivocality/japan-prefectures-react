@@ -6,6 +6,10 @@ type PrefectureFlagProps = {
     width?: number;
     className?: string;
 };
+type Size = {
+    width: number;
+    height: number;
+};
 type PrefectureFlagComponent = React.ForwardRefExoticComponent<PrefectureFlagProps & React.RefAttributes<HTMLImageElement>>;
 
 declare const Aomori: PrefectureFlagComponent;
@@ -132,4 +136,4 @@ declare const getFlagByCode: (code: Prefecture["code"], props: PrefectureFlagPro
 
 declare function getFlagByPrefectureField<K extends PrefectureFields, V extends PrefectureQueryValue<K>>(key: K, value: V, props: PrefectureFlagProps): react.ReactNode;
 
-export { Aichi, Akita, Aomori, Chiba, Ehime, Fukui, Fukuoka, Fukushima, Gifu, Gunma, Hiroshima, Hokkaido, Hyogo, Ibaraki, Ishikawa, Iwate, Kagawa, Kagoshima, Kanagawa, Kochi, Kumamoto, Kyoto, Mie, Miyagi, Miyazaki, Nagano, Nagasaki, Nara, Niigata, Oita, Okayama, Okinawa, Osaka, Saga, Saitama, Shiga, Shimane, Shizuoka, Tochigi, Tokushima, Tokyo, Tottori, Toyama, Wakayama, Yamagata, Yamaguchi, Yamanashi, getFlagByCode, getFlagByPrefectureField };
+export { Aichi, Akita, Aomori, Chiba, Ehime, Fukui, Fukuoka, Fukushima, Gifu, Gunma, Hiroshima, Hokkaido, Hyogo, Ibaraki, Ishikawa, Iwate, Kagawa, Kagoshima, Kanagawa, Kochi, Kumamoto, Kyoto, Mie, Miyagi, Miyazaki, Nagano, Nagasaki, Nara, Niigata, Oita, Okayama, Okinawa, Osaka, type PrefectureFlagComponent, type PrefectureFlagProps, Saga, Saitama, Shiga, Shimane, Shizuoka, type Size, Tochigi, Tokushima, Tokyo, Tottori, Toyama, Wakayama, Yamagata, Yamaguchi, Yamanashi, getFlagByCode, getFlagByPrefectureField };
