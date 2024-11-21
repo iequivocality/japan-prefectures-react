@@ -313,7 +313,8 @@ interface PrefectureMapProps {
 
 For Typescript users, feel free to peruse the type declarations in the following files.
 
-- [Core](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/core.d.ts)
+- [Core Functions](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/core.d.ts)
+- [Core Types](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/types/index.d.ts)
 - [Flags](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/flags/index.d.ts)
 - [Maps](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/maps/index.d.ts)
 

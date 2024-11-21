@@ -18,6 +18,11 @@ describe("Japan Prefectures Core", () => {
 
     expect(getPrefectureByCode("JP-47")).toBeDefined();
     expect(getPrefectureByCode("JP-47")?.romaji).toStrictEqual("Okinawa");
+
+    // @ts-expect-error Testing invalid input
+    expect(getPrefectureByCode(null)).toBeUndefined();
+    // @ts-expect-error Testing invalid input
+    expect(getPrefectureByCode("")?.romaji).toBeUndefined();
   });
 
   test("Test getPrefectureByField", () => {

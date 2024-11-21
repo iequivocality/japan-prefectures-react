@@ -27,21 +27,21 @@ const commonPlugins = [
 const subfolderPlugins = (folderName) => {
   return [
     ...commonPlugins,
-    generatePackageJson({
-      baseContents: {
-        name: `${packageJson.name}/${folderName}`,
-        private: true,
-        main: `../index.js`,
-        module: `./index.mjs`,
-        types: `./index.d.ts`,
-        peerDependencies: packageJson.peerDependencies,
-      },
-      outputFolder: `dist/${folderName}/`,
-    }),
+    // generatePackageJson({
+    //   baseContents: {
+    //     name: `${packageJson.name}/${folderName}`,
+    //     private: true,
+    //     main: `../index.js`,
+    //     module: `./index.mjs`,
+    //     types: `./index.d.ts`,
+    //     peerDependencies: packageJson.peerDependencies,
+    //   },
+    //   outputFolder: `dist/${folderName}/`,
+    // }),
   ];
 };
 
-const folders = ["flags", "maps", "types"];
+const folders = ["flags", "maps"];
 
 const folderBuilds = folders.map((folder) => {
   return {
