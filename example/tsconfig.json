@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es2015",
     "module": "ES6",
     "declaration": true,
     "outDir": "./dist",
@@ -9,10 +9,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "declarationMap": true,
-    "baseUrl": "./src",
-    "paths": {
-      "japan-prefectures-react": ["../dist"]
-    }
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }

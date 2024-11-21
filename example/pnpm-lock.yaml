@@ -26,6 +26,9 @@ importers:
       cmdk:
         specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      japan-prefectures-react:
+        specifier: github:iequivocality/japan-prefectures-react
+        version: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/ea71233ee129c6cfa0305ed0917fa873af3e70fd(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lucide-react:
         specifier: ^0.460.0
         version: 0.460.0(react@18.3.1)
@@ -1206,6 +1209,13 @@ packages:
 
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
+
+  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/ea71233ee129c6cfa0305ed0917fa873af3e70fd:
+    resolution: {tarball: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/ea71233ee129c6cfa0305ed0917fa873af3e70fd}
+    version: 0.0.1
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
 
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
@@ -2789,6 +2799,11 @@ snapshots:
       '@isaacs/cliui': 8.0.2
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
+
+  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/ea71233ee129c6cfa0305ed0917fa873af3e70fd(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   jiti@1.21.6: {}
 
