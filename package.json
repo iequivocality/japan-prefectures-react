@@ -1,7 +1,7 @@
 {
   "name": "japan-prefectures-react",
   "version": "0.0.1",
-  "description": "Utility for Japanese prefectures, also includes React components for their flags",
+  "description": "Utility for Japanese prefectures, also includes React components for their flags and a map of Japan.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/iequivocality/japan-prefectures-react.git"
   },
-  "keywords": [],
+  "keywords": ["japan", "prefectures", "react", "flags", "map", "svg", "typescript", "日本", "都道府県"],
   "author": "iequivocality (https://github.com/iequivocality)",
   "license": "MIT",
   "devDependencies": {

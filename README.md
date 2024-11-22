@@ -13,9 +13,9 @@ Utility for Japanese prefectures, also includes React components for their flags
 ## Installation
 
 ```bash
-npm install japan-prefectures-react --save
-yarn add japan-prefectures-react
-pnpm add japan-prefectures-react
+npm install git+https://github.com/iequivocality/japan-prefectures-react.git --save
+yarn add git+https://github.com/iequivocality/japan-prefectures-react.git
+pnpm add git+https://github.com/iequivocality/japan-prefectures-react.git
 ```
 
 ## Core
