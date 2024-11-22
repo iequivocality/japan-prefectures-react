@@ -14,7 +14,17 @@
     "type": "git",
     "url": "https://github.com/iequivocality/japan-prefectures-react.git"
   },
-  "keywords": ["japan", "prefectures", "react", "flags", "map", "svg", "typescript", "日本", "都道府県"],
+  "keywords": [
+    "japan",
+    "prefectures",
+    "react",
+    "flags",
+    "map",
+    "svg",
+    "typescript",
+    "日本",
+    "都道府県"
+  ],
   "author": "iequivocality (https://github.com/iequivocality)",
   "license": "MIT",
   "devDependencies": {

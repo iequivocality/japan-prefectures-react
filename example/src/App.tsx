@@ -9,7 +9,7 @@ import {
   PrefectureCode,
 } from "japan-prefectures-react";
 import { MapTypeCombobox } from "./MapTypeCombobox";
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Bug } from "lucide-react";
 
 const App: React.FC = () => {
@@ -30,14 +30,27 @@ const App: React.FC = () => {
   return (
     <main className="font-sans dark:text-slate-200 flex flex-col items-center gap-y-16 min-w-screen">
       <nav className="px-20 py-4 flex items-center justify-between w-full">
-        <a href="https://github.com/iequivocality/japan-prefectures-react" className="flex">
+        <a
+          href="https://github.com/iequivocality/japan-prefectures-react"
+          className="flex"
+        >
           <h1 className="font-bold">japan-prefectures-react</h1>
         </a>
         <div className="flex items-center gap-x-4">
-          <a href="https://github.com/iequivocality/japan-prefectures-react/issues" target="_blank" rel="noreferrer" title="File a issue here">
+          <a
+            href="https://github.com/iequivocality/japan-prefectures-react/issues"
+            target="_blank"
+            rel="noreferrer"
+            title="File a issue here"
+          >
             <Bug size={24} />
           </a>
-          <a href="https://github.com/iequivocality/japan-prefectures-react" target="_blank" rel="noreferrer" title="Go to Github">
+          <a
+            href="https://github.com/iequivocality/japan-prefectures-react"
+            target="_blank"
+            rel="noreferrer"
+            title="Go to Github"
+          >
             <SiGithub size={24} />
           </a>
         </div>
@@ -69,9 +82,7 @@ const App: React.FC = () => {
         <h4 className="text-center font-bold">Map Type</h4>
         <MapTypeCombobox selectedMapType={mapType} setMapType={setMapType} />
       </section>
-      <section className="flex justify-center items-center gap-x-4">
-
-      </section>
+      <section className="flex justify-center items-center gap-x-4"></section>
       <h2 className="text-center text-2xl font-bold mb-4">
         Prefectures of Japan
       </h2>

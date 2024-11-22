@@ -47,7 +47,7 @@ export function MapTypeCombobox({
         >
           {selectedMapType
             ? mapTypes.find((mapType) => mapType.value === selectedMapType)
-              ?.label
+                ?.label
             : "Select map type..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>

@@ -4,7 +4,7 @@ import {
   getPrefectureByCode,
   getPrefectureByField,
   getAllRegions,
-  getAllRegionsWithPrefectures
+  getAllRegionsWithPrefectures,
 } from "../src/core";
 
 describe("Japan Prefectures Core", () => {
@@ -62,9 +62,7 @@ describe("Japan Prefectures Core", () => {
     expect(hokkaido?.borders[0].type.key).toStrictEqual("ken");
   });
 
-  test("Test getPrefecturesByRegion", () => {
-
-  });
+  test("Test getPrefecturesByRegion", () => {});
 
   test("Test getPrefecturesNamesByLanguage", () => {
     // TODO
