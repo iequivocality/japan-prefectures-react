@@ -549,21 +549,21 @@ export function getPrefecturesByType(type: PrefectureTypeKey): Prefecture[] {
   return prefectures.filter((prefecture) => prefecture.type.romaji === type);
 }
 
-export function getAllRegions(
-  { withPrefectures }: { withPrefectures: boolean } = {
-    withPrefectures: false,
-  },
-): Region[] | RegionWithPrefectures[] {
+export function getAllRegions(): Region[] {
   return Object.keys(regions).map((key) => {
     const region = regions[key as RegionKey];
-    if (withPrefectures) {
-      return {
-        ...region,
-        prefectures: prefectures.filter(
-          (prefecture) => prefecture.region.key === key,
-        ),
-      };
-    }
     return region;
+  });
+}
+
+export function getAllRegionsWithPrefectures(): RegionWithPrefectures[] {
+  return Object.keys(regions).map((key) => {
+    const region = regions[key as RegionKey];
+    return {
+      ...region,
+      prefectures: prefectures.filter(
+        (prefecture) => prefecture.region.key === key,
+      ),
+    };
   });
 }

@@ -31,7 +31,7 @@ export type Region = {
     romaji: string;
 };
 export type RegionWithPrefectures = Region & {
-    prefectures: Prefecture[];
+    prefectures?: Prefecture[];
 };
 export type RegionKey = "hokkaido" | "tohoku" | "kanto" | "chubu" | "kansai" | "chugoku" | "shikoku" | "kyushu";
 export type PrefectureQueryValue<Key extends PrefectureFields> = Prefecture[Key] extends string ? Prefecture[Key] : Prefecture[Key] extends Region ? Region[keyof Region] : Prefecture[Key] extends PrefectureType ? Prefecture[keyof Prefecture] : Prefecture[Key] extends PrefectureCode[] ? PrefectureCode : string;

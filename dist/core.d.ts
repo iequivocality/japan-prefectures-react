@@ -6,6 +6,5 @@ export declare function getCompletePrefectureByCode(code: Prefecture["code"]): C
 export declare function getPrefecturesByRegion(region: string): Prefecture[];
 export declare function getPrefecturesNamesByLanguage(language: Language): PrefectureNames[];
 export declare function getPrefecturesByType(type: PrefectureTypeKey): Prefecture[];
-export declare function getAllRegions({ withPrefectures }?: {
-    withPrefectures: boolean;
-}): Region[] | RegionWithPrefectures[];
+export declare function getAllRegions(): Region[];
+export declare function getAllRegionsWithPrefectures(): RegionWithPrefectures[];

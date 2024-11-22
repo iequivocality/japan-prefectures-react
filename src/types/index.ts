@@ -43,7 +43,7 @@ export type Region = {
 };
 
 export type RegionWithPrefectures = Region & {
-  prefectures: Prefecture[];
+  prefectures?: Prefecture[];
 };
 
 export type RegionKey =
@@ -58,14 +58,14 @@ export type RegionKey =
 
 export type PrefectureQueryValue<Key extends PrefectureFields> =
   Prefecture[Key] extends string
-    ? Prefecture[Key]
-    : Prefecture[Key] extends Region
-      ? Region[keyof Region]
-      : Prefecture[Key] extends PrefectureType
-        ? Prefecture[keyof Prefecture]
-        : Prefecture[Key] extends PrefectureCode[]
-          ? PrefectureCode
-          : string;
+  ? Prefecture[Key]
+  : Prefecture[Key] extends Region
+  ? Region[keyof Region]
+  : Prefecture[Key] extends PrefectureType
+  ? Prefecture[keyof Prefecture]
+  : Prefecture[Key] extends PrefectureCode[]
+  ? PrefectureCode
+  : string;
 
 export type PartialRecord<K extends keyof any, T> = {
   [P in K]?: T;

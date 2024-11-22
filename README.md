@@ -18,11 +18,16 @@ yarn add git+https://github.com/iequivocality/japan-prefectures-react.git
 pnpm add git+https://github.com/iequivocality/japan-prefectures-react.git
 ```
 
+## Demo
+
+[**Demo**](https://japan-prefectures-react.vercel.app/)
+
 ## Core
 
 ### getAllPrefectures()
 
-Returns an array of all prefectures
+Returns an array of all prefectures.
+
 @returns {Prefecture[]}
 
 ```ts
@@ -36,6 +41,7 @@ console.log(prefectures.length); // 47
 ### getPrefectureByCode(code: Prefecture["code"])
 
 Returns a prefecture by its ISO 3166 or Geocode.
+
 @returns Prefecture or undefined if any value other than Geocodes below is passed
 
 | Geocode | Prefecture |
@@ -137,6 +143,7 @@ console.log(getPrefectureByField("japanese", "")); // undefined
 ### getCompletePrefectureByCode(code: Prefecture["code"])
 
 Same as getPrefectureByCode, but borders contains Prefecture[] for borders instead of PrefectureCode[].
+
 @returns Prefecture or undefined if any value other than Geocodes below is passed
 
 ### getPrefecturesByRegion(region: string)
@@ -161,17 +168,24 @@ Returns an array of prefectures by type. Type can be Romaji, Japanese or the fol
 
 @returns {Prefecture[]}
 
-### getAllRegions({ withPrefectures: boolean })
+### getAllRegions()
 
-Returns an array of regions. If withPrefectures is true, the regions will also include the list of their prefectures.
+Returns an array of regions.
 
-@returns {Region[] | RegionWithPrefectures[]}
+@returns {Region[]}
+
+### getAllRegionsWithPrefectures()
+
+Returns an array of regions with their prefectures.
+
+@returns {RegionWithPrefectures[]}
 
 ## Flags
 
 ### getFlagByCode(code: Prefecture["code"], props: PrefectureFlagProps)
 
 Returns a prefecture flag by its ISO 3166 or Geocode. You can refer to getPrefectureByCode for the list of Geocodes.
+
 @returns PrefectureFlagComponent or undefined if any value other than Geocodes below is passed
 
 ### getFlagByPrefectureField(key: PrefectureFields, value: PrefectureQueryValue<PrefectureFields>, props: PrefectureFlagProps)
