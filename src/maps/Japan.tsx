@@ -117,8 +117,6 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       ...restProps
     } = props;
     const mt = mapType ?? "full";
-    const specificPrefectureClassNames =
-      prefectureClassNames || defaultClassnames;
     const createCommonPrefectureProps = (
       prefecture: PrefectureCode,
     ): SVGProps<SVGPathElement> => ({
