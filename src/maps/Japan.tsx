@@ -136,7 +136,7 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       className: [
         "prefecture",
         prefectureProps?.className,
-        specificPrefectureClassNames["JP-46"],
+        prefectureClassNames && prefecture in prefectureClassNames ? prefectureClassNames[prefecture] : defaultClassnames[prefecture],
       ]
         .filter((p) => p)
         .join(" "),
