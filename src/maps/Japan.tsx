@@ -27,6 +27,7 @@ export interface PrefectureMapProps {
     prefecture: PrefectureCode,
     event: React.MouseEvent<SVGPathElement, MouseEvent>,
   ) => void;
+  pathProps?: SVGProps<SVGPathElement>;
 }
 
 export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
@@ -134,10 +135,13 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       className: [
         "prefecture",
         prefectureProps?.className,
-        prefectureClassNames && prefecture in prefectureClassNames ? prefectureClassNames[prefecture] : defaultClassnames[prefecture],
+        prefectureClassNames && prefecture in prefectureClassNames
+          ? prefectureClassNames[prefecture]
+          : defaultClassnames[prefecture],
       ]
         .filter((p) => p)
         .join(" "),
+      ...prefectureProps?.pathProps,
     });
 
     let divider: ReactNode | null = null;
