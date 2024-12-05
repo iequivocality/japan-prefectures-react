@@ -163,10 +163,6 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       <g id="map-of-japan-strokes">
         <path
           className="map-of-japan-stroke"
-          fill={
-            prefectureOutlineStyle?.strokeColor ??
-            defaultPrefectureOutlineStyle.strokeColor
-          }
           stroke={
             prefectureOutlineStyle?.strokeColor ??
             defaultPrefectureOutlineStyle.strokeColor
