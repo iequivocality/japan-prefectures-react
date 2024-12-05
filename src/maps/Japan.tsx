@@ -36,11 +36,11 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
   prefectureClassNames?: PartialRecord<PrefectureCode, string>;
   prefectureOutlineStyle?: {
     strokeColor?: string;
-    strokeWidth?: string;
+    strokeWidth?: string | number;
   };
   dividerStrokeStyle?: {
     strokeColor?: string;
-    strokeWidth?: string;
+    strokeWidth?: string | number;
   };
 }
 

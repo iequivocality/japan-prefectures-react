@@ -15,11 +15,11 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
     prefectureClassNames?: PartialRecord<PrefectureCode, string>;
     prefectureOutlineStyle?: {
         strokeColor?: string;
-        strokeWidth?: string;
+        strokeWidth?: string | number;
     };
     dividerStrokeStyle?: {
         strokeColor?: string;
-        strokeWidth?: string;
+        strokeWidth?: string | number;
     };
 }
 declare const Japan: import("react").ForwardRefExoticComponent<Omit<MapOfJapanProps, "ref"> & import("react").RefAttributes<SVGSVGElement>>;
