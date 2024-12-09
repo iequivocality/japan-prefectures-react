@@ -1,59 +1,81 @@
 import React, { useState } from "react";
 import {
   getAllPrefectures,
-  getFlagByCode,
-  getPrefectureByCode,
-  Japan,
-  MapType,
-  Prefecture,
-  PrefectureCode,
+  getAllPrefecturesWithSuffix,
 } from "japan-prefectures-react";
-import { MapTypeCombobox } from "../components/MapTypeCombobox";
+import { PrefectureSelect } from "../components/PrefectureSelect";
 
 export const Home = () => {
   const prefectures = getAllPrefectures();
-  const [hoveredPrefecture, setHoveredPrefecture] = useState<Prefecture | null>(
-    null,
-  );
-  const [mapType, setMapType] = useState<MapType>("full");
-
-  const onMouseEnter = (prefectureCode: PrefectureCode) => {
-    setHoveredPrefecture(getPrefectureByCode(prefectureCode) ?? null);
-  };
-
-  const onMouseLeave = (prefectureCode: PrefectureCode) => {
-    setHoveredPrefecture(null);
-  };
+  const prefecturesWithSuffix = getAllPrefecturesWithSuffix();
 
   return (
     <>
-      <section className="flex items-center flex-col h-1/2 w-full gap-y-8">
-        <h2 className="text-center text-2xl font-bold mb-4">Map of Japan</h2>
-        <div className="flex flex-col items-center">
-          <h3>Selected Prefecture</h3>
-          <div className="flex items-center gap-x-2">
-            {hoveredPrefecture
-              ? getFlagByCode(hoveredPrefecture.code, { width: 24 })
-              : null}
-            {hoveredPrefecture
-              ? `${hoveredPrefecture.code}: ${hoveredPrefecture.romaji} (${hoveredPrefecture.japanese}${hoveredPrefecture.code === "JP-01" ? "" : hoveredPrefecture.type.japanese})`
-              : "None"}
+      <section className="flex items-center flex-col h-1/2 w-full gap-y-8 p-2">
+        <h1 className="text-center text-2xl font-bold mb-4">
+          japan-prefectures-react
+        </h1>
+        <p className="md:max-w-80 text-center">
+          Utility for Japanese prefectures, also includes React components for
+          their flags. Typescript support included.
+        </p>
+      </section>
+      <section className="flex items-center flex-col h-1/2 w-full gap-y-8 p-2">
+        <h2 className="text-xl font-bold">Usage</h2>
+        <div className="w-full md:w-3/4 lg:w-1/2 flex flex-col rounded-md">
+          <div className="flex items-center gap-y-4 h-32">
+            <h3 className="flex flex-1 items-center justify-center font-semibold">
+              Normal Select with Suffix
+            </h3>
+            <div className="flex-1 text-black flex justify-center items-center flex-col gap-y-3">
+              <select name="prefecture" className="w-40 rounded-sm">
+                {prefectures.map((pref) => (
+                  <option key={pref.code} value={pref.code}>
+                    {pref.japanese}
+                  </option>
+                ))}
+              </select>
+              <select name="prefecture" className="w-40 rounded-sm">
+                {prefectures.map((pref) => (
+                  <option key={pref.code} value={pref.code}>
+                    {pref.romaji}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="flex items-center gap-y-4 h-32">
+            <h3 className="flex flex-1 items-center justify-center font-semibold">
+              Normal Select without Suffix
+            </h3>
+            <div className="flex-1 text-black flex justify-center items-center flex-col gap-y-3">
+              <select name="prefecture" className="w-40 rounded-sm">
+                {prefecturesWithSuffix.map((pref) => (
+                  <option key={pref.code} value={pref.code}>
+                    {pref.japanese}
+                  </option>
+                ))}
+              </select>
+              <select name="prefecture" className="w-40 rounded-sm">
+                {prefectures.map((pref) => (
+                  <option key={pref.code} value={pref.code}>
+                    {pref.romaji}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="flex items-center gap-y-4 h-32">
+            <h3 className="flex flex-1 items-center justify-center font-semibold">
+              Shadcn Combobox
+            </h3>
+            <div className="flex-1 flex justify-center items-center flex-col gap-y-3">
+              <PrefectureSelect language="jp" />
+              <PrefectureSelect language="en" />
+            </div>
           </div>
         </div>
-        <Japan
-          height={400}
-          className="stroke-slate-400 fill-slate-100"
-          prefectureProps={{
-            className:
-              "transition-all stroke-slate-400 fill-white hover:fill-red-500",
-            onMouseEnter,
-            onMouseLeave,
-          }}
-          mapType={mapType}
-        />
-        <h4 className="text-center font-bold">Map Type</h4>
-        <MapTypeCombobox selectedMapType={mapType} setMapType={setMapType} />
       </section>
     </>
   );
-}
+};

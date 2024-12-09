@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  getAllPrefectures,
-  getFlagByCode
-} from "japan-prefectures-react";
+import { getAllPrefectures, getFlagByCode } from "japan-prefectures-react";
 
 export const Flags = () => {
   const prefectures = getAllPrefectures();
@@ -34,4 +31,4 @@ export const Flags = () => {
       </section>
     </>
   );
-}
+};

@@ -38,6 +38,23 @@ console.log(prefectures); // [ Prefecture, Prefecture, Prefecture, ... , Prefect
 console.log(prefectures.length); // 47
 ```
 
+### getAllPrefecturesWithSuffix()
+
+Returns an array of all prefectures with their suffixes.
+
+@returns {Prefecture[]}
+
+```ts
+import { getAllPrefecturesWithSuffix } from "japan-prefectures-react";
+
+const prefectures = getAllPrefecturesWithSuffix();
+console.log(prefectures); // [ Prefecture, Prefecture, Prefecture, ...
+console.log(prefectures[0].japanese); // "北海道"
+console.log(prefectures[1].japanese); // "青森県"
+console.log(prefectures[13].japanese); // "東京都"
+console.log(prefectures[26].japanese); // "京都府"
+console.log(prefectures[27].japanese); // "大阪府"  
+
 ### PrefectureCodes
 
 A record of Geocodes for each prefecture.
@@ -350,6 +367,10 @@ For Typescript users, feel free to peruse the type declarations in the following
 - [Core Types](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/types/index.d.ts)
 - [Flags](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/flags/index.d.ts)
 - [Maps](https://github.com/iequivocality/japan-prefectures-react/blob/main/dist/maps/index.d.ts)
+
+## Future Plans
+
+- Tree shaking support so that React is not required for the core functionality.
 
 ## Attribution
 

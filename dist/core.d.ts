@@ -49,6 +49,7 @@ export declare const PrefectureCodes: {
     readonly Okinawa: "JP-47";
 };
 export declare function getAllPrefectures(): Prefecture[];
+export declare function getAllPrefecturesWithSuffix(): Prefecture[];
 export declare function getPrefectureByCode(code: Prefecture["code"]): Prefecture | undefined;
 export declare function getPrefectureByField<Field extends PrefectureFields, Value extends PrefectureQueryValue<Field>>(field: Field, value: Value): Prefecture | undefined;
 export declare function getCompletePrefectureByCode(code: Prefecture["code"]): CompletePrefecture | undefined;

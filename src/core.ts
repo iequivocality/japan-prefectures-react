@@ -509,7 +509,7 @@ const prefectures: Prefecture[] = [
   },
   {
     code: "JP-47",
-    japanese: "沖縄県",
+    japanese: "沖縄",
     romaji: "Okinawa",
     type: prefectureTypes["ken"],
     region: regions["kyushu"],
@@ -519,6 +519,13 @@ const prefectures: Prefecture[] = [
 
 export function getAllPrefectures(): Prefecture[] {
   return prefectures;
+}
+
+export function getAllPrefecturesWithSuffix(): Prefecture[] {
+  return prefectures.map(pref => ({
+    ...pref,
+    japanese: `${pref.japanese}${pref.code === "JP-01" ? "" : pref.type.japanese}`,
+  }));
 }
 
 export function getPrefectureByCode(
