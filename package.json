@@ -1,6 +1,6 @@
 {
   "name": "japan-prefectures-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Utility for Japanese prefectures, also includes React components for their flags and a map of Japan.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
