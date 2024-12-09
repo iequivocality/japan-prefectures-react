@@ -25,19 +25,17 @@ interface PrefectureMapProps {
     onMouseOver?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
     pathProps?: SVGProps<SVGPathElement>;
 }
+type StrokeProps = {
+    strokeColor?: string;
+    strokeWidth?: string | number;
+};
 interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
     className?: string;
     mapType?: MapType;
     prefectureProps?: PrefectureMapProps;
     prefectureClassNames?: PartialRecord<PrefectureCode, string>;
-    prefectureOutlineStyle?: {
-        strokeColor?: string;
-        strokeWidth?: string | number;
-    };
-    dividerStrokeStyle?: {
-        strokeColor?: string;
-        strokeWidth?: string | number;
-    };
+    prefectureOutlineStyle?: StrokeProps;
+    dividerStrokeStyle?: StrokeProps;
 }
 declare const Japan: react.ForwardRefExoticComponent<Omit<MapOfJapanProps, "ref"> & react.RefAttributes<SVGSVGElement>>;
 

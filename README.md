@@ -38,11 +38,23 @@ console.log(prefectures); // [ Prefecture, Prefecture, Prefecture, ... , Prefect
 console.log(prefectures.length); // 47
 ```
 
-### getPrefectureByCode(code: Prefecture["code"])
+### PrefectureCodes
 
-Returns a prefecture by its ISO 3166 or Geocode.
+A record of Geocodes for each prefecture.
 
-@returns Prefecture or undefined if any value other than Geocodes below is passed
+```ts
+  console.log(PrefectureCodes.Hokkaido); // JP-01
+  console.log(PrefectureCodes.Aomori); // JP-02
+  console.log(PrefectureCodes.Iwate); // JP-03
+  . . .
+  console.log(PrefectureCodes.Tokyo); // JP-13
+  . . .
+  console.log(PrefectureCodes.Kyoto); // JP-26
+  console.log(PrefectureCodes.Osaka); // JP-27
+  . . .
+  console.log(PrefectureCodes.Okinawa); // JP-47
+
+```
 
 | Geocode | Prefecture |
 | ------- | ---------- |
@@ -93,6 +105,12 @@ Returns a prefecture by its ISO 3166 or Geocode.
 | JP-45   | Miyazaki   |
 | JP-46   | Kagoshima  |
 | JP-47   | Okinawa    |
+
+### getPrefectureByCode(code: Prefecture["code"])
+
+Returns a prefecture by its ISO 3166 or Geocode.
+
+@returns Prefecture or undefined if any value other than Geocodes below is passed
 
 ```ts
 import { getPrefectureByCode } from "japan-prefectures-react";
@@ -283,7 +301,7 @@ Assigned class name to the main SVG component.
 
 ##### prefectureProps?: PrefectureMapProps
 
-Contains properties and callbacks for each prefecture path element. *in progress*
+Contains properties and callbacks for each prefecture path element. This is applied to all prefecture elements in the SVG. Use prefectureProps.pathProps for further customization of the path element assigned to all prefectures.
 
 ##### prefectureClassNames?: PartialRecord<PrefectureCode, string>
 
@@ -319,6 +337,7 @@ interface PrefectureMapProps {
     onMouseLeave?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
     onClick?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
     onMouseOver?: (prefecture: PrefectureCode, event: React.MouseEvent<SVGPathElement, MouseEvent>) => void;
+    pathProps?: SVGProps<SVGPathElement>;
 }
 
 ```

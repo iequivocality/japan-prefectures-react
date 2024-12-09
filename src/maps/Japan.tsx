@@ -30,27 +30,26 @@ export interface PrefectureMapProps {
   pathProps?: SVGProps<SVGPathElement>;
 }
 
+type StrokeProps = {
+  strokeColor?: string;
+  strokeWidth?: string | number;
+};
+
 export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
   className?: string;
   mapType?: MapType;
   prefectureProps?: PrefectureMapProps;
   prefectureClassNames?: PartialRecord<PrefectureCode, string>;
-  prefectureOutlineStyle?: {
-    strokeColor?: string;
-    strokeWidth?: string | number;
-  };
-  dividerStrokeStyle?: {
-    strokeColor?: string;
-    strokeWidth?: string | number;
-  };
+  prefectureOutlineStyle?: StrokeProps;
+  dividerStrokeStyle?: StrokeProps;
 }
 
-const defaultDividerStrokeStyle = {
+const defaultDividerStrokeStyle: StrokeProps = {
   strokeColor: "#666666",
   strokeWidth: "2",
 };
 
-const defaultPrefectureOutlineStyle = {
+const defaultPrefectureOutlineStyle: StrokeProps = {
   strokeColor: "#333333",
   strokeWidth: "1",
 };
