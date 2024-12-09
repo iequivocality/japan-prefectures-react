@@ -7,7 +7,6 @@ import {
   createRoute,
   createRootRoute,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import "./index.css";
 import { AppNav } from "./components/appnav";
 import { Home } from "./routes/Home";
@@ -23,7 +22,6 @@ const rootRoute = createRootRoute({
       <main className="font-sans dark:text-slate-200 flex flex-col items-center gap-y-16 min-w-screen py-8 min-h-screen">
         <Outlet />
       </main>
-      <TanStackRouterDevtools />
     </TooltipProvider>
   ),
 });
