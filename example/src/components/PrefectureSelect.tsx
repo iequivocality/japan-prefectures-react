@@ -17,7 +17,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import {
   getAllPrefecturesWithSuffix,
   getFlagByCode,
-  Language,
   Prefecture,
 } from "japan-prefectures-react";
 
