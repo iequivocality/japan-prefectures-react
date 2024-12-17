@@ -207,6 +207,7 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
               d={prefectureData[prefecture.code][mt]}
               key={prefecture.code}
               stroke="none"
+              fill="#FFF"
               {...createCommonPrefectureProps(prefecture.code)}
             ></path>
           );
