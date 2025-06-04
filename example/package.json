@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier": "pnpm exec prettier . --write"
+    "prettier": "pnpm exec prettier . --write",
+    "update": "pnpm add github:iequivocality/japan-prefectures-react"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^10.1.0",
