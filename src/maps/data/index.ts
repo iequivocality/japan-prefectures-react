@@ -1,5 +1,5 @@
-import { PrefectureCode } from "../types";
-import { MapSVGAttributes, MapTypeData } from "./types";
+import { PrefectureCode } from "../../types";
+import { MapSVGAttributes, MapTypeData } from "../types";
 
 export const mapData: MapSVGAttributes = {
   viewBox: {

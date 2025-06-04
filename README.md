@@ -375,7 +375,7 @@ For Typescript users, feel free to peruse the type declarations in the following
 ## Attribution
 
 - Prefectures flags are from [Wikimedia Commons](https://commons.wikimedia.org/)
-- Map of Japan is from [ka215/svg-japan](https://github.com/ka215/svg-japan)
+- Map of Japan SVG data is from [ka215/svg-japan](https://github.com/ka215/svg-japan)
 
 ## License
 
