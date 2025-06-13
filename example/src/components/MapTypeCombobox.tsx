@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "./popover";
-import { Button } from "./button";
-import { Command, CommandGroup, CommandItem, CommandList } from "./command";
 import { cn } from "../lib/utils";
 
 import { MapType } from "japan-prefectures-react";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Button } from "./ui/button";
+import { Command, CommandGroup, CommandItem, CommandList } from "./ui/command";
 
 const mapTypes: { label: string; value: MapType }[] = [
   {

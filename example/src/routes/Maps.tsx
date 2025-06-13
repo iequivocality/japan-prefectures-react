@@ -8,8 +8,31 @@ import {
   PrefectureCode,
 } from "japan-prefectures-react";
 import { MapTypeCombobox } from "../components/MapTypeCombobox";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-export const Maps = () => {
+export const Route = createFileRoute({
+  component: Maps,
+});
+
+function PrefectureWrapper({
+  prefecture,
+  children,
+}: {
+  prefecture: Prefecture;
+  children: React.ReactNode;
+}) {
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
+      <TooltipContent>
+        <p>{prefecture.romaji}</p>
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
+export function Maps() {
   const [hoveredPrefecture, setHoveredPrefecture] = useState<Prefecture | null>(
     null,
   );
@@ -39,7 +62,7 @@ export const Maps = () => {
           </div>
         </div>
         <Japan
-          height={400}
+          height={800}
           className="stroke-slate-400 fill-slate-100"
           prefectureProps={{
             className:
@@ -48,10 +71,11 @@ export const Maps = () => {
             onMouseLeave,
           }}
           mapType={mapType}
+          PrefectureWrapperComponent={PrefectureWrapper}
         />
         <h4 className="text-center font-bold">Map Type</h4>
         <MapTypeCombobox selectedMapType={mapType} setMapType={setMapType} />
       </section>
     </>
   );
-};
+}

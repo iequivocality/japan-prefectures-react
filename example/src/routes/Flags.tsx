@@ -1,7 +1,11 @@
 import React from "react";
 import { getAllPrefectures, getFlagByCode } from "japan-prefectures-react";
 
-export const Flags = () => {
+export const Route = createFileRoute({
+  component: Flags,
+});
+
+export function Flags() {
   const prefectures = getAllPrefectures();
   return (
     <>
@@ -31,4 +35,4 @@ export const Flags = () => {
       </section>
     </>
   );
-};
+}

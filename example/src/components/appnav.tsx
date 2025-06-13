@@ -7,7 +7,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "./navigation-menu";
+} from "@/components/ui/navigation-menu";
 
 export const AppNav = () => {
   return (

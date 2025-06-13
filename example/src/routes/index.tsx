@@ -5,7 +5,11 @@ import {
 } from "japan-prefectures-react";
 import { PrefectureSelect } from "../components/PrefectureSelect";
 
-export const Home = () => {
+export const Route = createFileRoute({
+  component: Index,
+});
+
+function Index() {
   const prefectures = getAllPrefectures();
   const prefecturesWithSuffix = getAllPrefecturesWithSuffix();
 
@@ -28,14 +32,14 @@ export const Home = () => {
               Normal Select with Suffix
             </h3>
             <div className="flex-1 text-black flex justify-center items-center flex-col gap-y-3">
-              <select name="prefecture" className="w-40 rounded-sm">
+              <select name="prefecture" className="w-40 rounded-sm py-2 px-4 bg-white">
                 {prefectures.map((pref) => (
                   <option key={pref.code} value={pref.code}>
                     {pref.japanese}
                   </option>
                 ))}
               </select>
-              <select name="prefecture" className="w-40 rounded-sm">
+              <select name="prefecture" className="w-40 rounded-sm py-2 px-4 bg-white">
                 {prefectures.map((pref) => (
                   <option key={pref.code} value={pref.code}>
                     {pref.romaji}
@@ -49,14 +53,14 @@ export const Home = () => {
               Normal Select without Suffix
             </h3>
             <div className="flex-1 text-black flex justify-center items-center flex-col gap-y-3">
-              <select name="prefecture" className="w-40 rounded-sm">
+              <select name="prefecture" className="w-40 rounded-sm py-2 px-4 bg-white">
                 {prefecturesWithSuffix.map((pref) => (
                   <option key={pref.code} value={pref.code}>
                     {pref.japanese}
                   </option>
                 ))}
               </select>
-              <select name="prefecture" className="w-40 rounded-sm">
+              <select name="prefecture" className="w-40 rounded-sm py-2 px-4 bg-white">
                 {prefectures.map((pref) => (
                   <option key={pref.code} value={pref.code}>
                     {pref.romaji}
@@ -78,4 +82,4 @@ export const Home = () => {
       </section>
     </>
   );
-};
+}
