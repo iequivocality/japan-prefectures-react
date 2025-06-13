@@ -46,7 +46,7 @@ importers:
         version: 1.0.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       japan-prefectures-react:
         specifier: github:iequivocality/japan-prefectures-react
-        version: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/5308fdf5a7bee1de20a7ed8abcf9ee5b50f2dfce(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/0237f39f3443e6db99ecac3b39896377835633bf(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lucide-react:
         specifier: ^0.515.0
         version: 0.515.0(react@18.3.1)
@@ -1727,12 +1727,9 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  jackspeak@3.4.3:
-    resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
-
-  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/5308fdf5a7bee1de20a7ed8abcf9ee5b50f2dfce:
-    resolution: {tarball: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/5308fdf5a7bee1de20a7ed8abcf9ee5b50f2dfce}
-    version: 0.0.5
+  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/0237f39f3443e6db99ecac3b39896377835633bf:
+    resolution: {tarball: https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/0237f39f3443e6db99ecac3b39896377835633bf}
+    version: 0.0.10
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -3819,13 +3816,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jackspeak@3.4.3:
-    dependencies:
-      '@isaacs/cliui': 8.0.2
-    optionalDependencies:
-      '@pkgjs/parseargs': 0.11.0
-
-  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/5308fdf5a7bee1de20a7ed8abcf9ee5b50f2dfce(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  japan-prefectures-react@https://codeload.github.com/iequivocality/japan-prefectures-react/tar.gz/0237f39f3443e6db99ecac3b39896377835633bf(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
