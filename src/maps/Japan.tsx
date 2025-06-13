@@ -1,4 +1,10 @@
-import { ReactNode, SVGProps, forwardRef } from "react";
+import {
+  ComponentType,
+  Fragment,
+  ReactNode,
+  SVGProps,
+  forwardRef,
+} from "react";
 import { PartialRecord, PrefectureCode } from "../types";
 import { getAllPrefectures } from "../core";
 import { MapType } from "./types";
@@ -42,6 +48,7 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
   prefectureClassNames?: PartialRecord<PrefectureCode, string>;
   prefectureOutlineStyle?: StrokeProps;
   dividerStrokeStyle?: StrokeProps;
+  PrefectureWrapperComponent?: ComponentType;
 }
 
 const defaultDividerStrokeStyle: StrokeProps = {
@@ -114,6 +121,7 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       prefectureClassNames,
       prefectureOutlineStyle,
       dividerStrokeStyle,
+      PrefectureWrapperComponent = Fragment,
       ...restProps
     } = props;
     const mt = mapType ?? "full";
@@ -199,17 +207,19 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
         {strokes}
         {prefectures.map((prefecture) => {
           return (
-            <path
-              id={`prefecture-map-${prefecture.code.toLowerCase()}`}
-              data-code={prefecture.code}
-              data-region={prefecture.region.key}
-              data-name={prefecture.romaji}
-              d={prefectureData[prefecture.code][mt]}
-              key={prefecture.code}
-              stroke="none"
-              fill="#FFF"
-              {...createCommonPrefectureProps(prefecture.code)}
-            ></path>
+            <PrefectureWrapperComponent>
+              <path
+                id={`prefecture-map-${prefecture.code.toLowerCase()}`}
+                data-code={prefecture.code}
+                data-region={prefecture.region.key}
+                data-name={prefecture.romaji}
+                d={prefectureData[prefecture.code][mt]}
+                key={prefecture.code}
+                stroke="none"
+                fill="#FFF"
+                {...createCommonPrefectureProps(prefecture.code)}
+              ></path>
+            </PrefectureWrapperComponent>
           );
         })}
       </svg>

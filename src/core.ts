@@ -522,7 +522,7 @@ export function getAllPrefectures(): Prefecture[] {
 }
 
 export function getAllPrefecturesWithSuffix(): Prefecture[] {
-  return prefectures.map(pref => ({
+  return prefectures.map((pref) => ({
     ...pref,
     japanese: `${pref.japanese}${pref.code === "JP-01" ? "" : pref.type.japanese}`,
   }));

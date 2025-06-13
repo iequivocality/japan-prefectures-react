@@ -1,5 +1,5 @@
 import * as react from 'react';
-import { SVGProps } from 'react';
+import { SVGProps, ComponentType } from 'react';
 
 type CodeNumbers = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 type CodeTensPlace = Exclude<CodeNumbers, "5" | "6" | "7" | "8" | "9">;
@@ -36,6 +36,7 @@ interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
     prefectureClassNames?: PartialRecord<PrefectureCode, string>;
     prefectureOutlineStyle?: StrokeProps;
     dividerStrokeStyle?: StrokeProps;
+    PrefectureWrapperComponent?: ComponentType;
 }
 declare const Japan: react.ForwardRefExoticComponent<Omit<MapOfJapanProps, "ref"> & react.RefAttributes<SVGSVGElement>>;
 
