@@ -5,7 +5,7 @@ import {
   SVGProps,
   forwardRef,
 } from "react";
-import { PartialRecord, PrefectureCode } from "../types";
+import { PartialRecord, Prefecture, PrefectureCode } from "../types";
 import { getAllPrefectures } from "../core";
 import { MapType } from "./types";
 import {
@@ -48,7 +48,7 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
   prefectureClassNames?: PartialRecord<PrefectureCode, string>;
   prefectureOutlineStyle?: StrokeProps;
   dividerStrokeStyle?: StrokeProps;
-  PrefectureWrapperComponent?: ComponentType;
+  PrefectureWrapperComponent?: ComponentType<{ prefecture: Prefecture, children: ReactNode }>;
 }
 
 const defaultDividerStrokeStyle: StrokeProps = {
@@ -207,14 +207,13 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
         {strokes}
         {prefectures.map((prefecture) => {
           return (
-            <PrefectureWrapperComponent>
+            <PrefectureWrapperComponent prefecture={prefecture} key={prefecture.code}>
               <path
                 id={`prefecture-map-${prefecture.code.toLowerCase()}`}
                 data-code={prefecture.code}
                 data-region={prefecture.region.key}
                 data-name={prefecture.romaji}
                 d={prefectureData[prefecture.code][mt]}
-                key={prefecture.code}
                 stroke="none"
                 fill="#FFF"
                 {...createCommonPrefectureProps(prefecture.code)}

@@ -1,5 +1,5 @@
-import { ComponentType, SVGProps } from "react";
-import { PartialRecord, PrefectureCode } from "../types";
+import { ComponentType, ReactNode, SVGProps } from "react";
+import { PartialRecord, Prefecture, PrefectureCode } from "../types";
 import { MapType } from "./types";
 export interface PrefectureMapProps {
     className?: string;
@@ -20,7 +20,10 @@ export interface MapOfJapanProps extends SVGProps<SVGSVGElement> {
     prefectureClassNames?: PartialRecord<PrefectureCode, string>;
     prefectureOutlineStyle?: StrokeProps;
     dividerStrokeStyle?: StrokeProps;
-    PrefectureWrapperComponent?: ComponentType;
+    PrefectureWrapperComponent?: ComponentType<{
+        prefecture: Prefecture;
+        children: ReactNode;
+    }>;
 }
 declare const Japan: import("react").ForwardRefExoticComponent<Omit<MapOfJapanProps, "ref"> & import("react").RefAttributes<SVGSVGElement>>;
 export default Japan;
