@@ -124,7 +124,7 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       prefectureClassNames,
       prefectureOutlineStyle,
       dividerStrokeStyle,
-      PrefectureWrapperComponent = Fragment,
+      PrefectureWrapperComponent,
       ...restProps
     } = props;
     const mt = mapType ?? "full";
@@ -209,7 +209,7 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
       >
         {strokes}
         {prefectures.map((prefecture) => {
-          return (
+          return PrefectureWrapperComponent ? (
             <PrefectureWrapperComponent
               prefecture={prefecture}
               key={prefecture.code}
@@ -225,6 +225,18 @@ const Japan = forwardRef<SVGSVGElement, MapOfJapanProps>(
                 {...createCommonPrefectureProps(prefecture.code)}
               ></path>
             </PrefectureWrapperComponent>
+          ) : (
+            <path
+              key={prefecture.code}
+              id={`prefecture-map-${prefecture.code.toLowerCase()}`}
+              data-code={prefecture.code}
+              data-region={prefecture.region.key}
+              data-name={prefecture.romaji}
+              d={prefectureData[prefecture.code][mt]}
+              stroke="none"
+              fill="#FFF"
+              {...createCommonPrefectureProps(prefecture.code)}
+            ></path>
           );
         })}
       </svg>
