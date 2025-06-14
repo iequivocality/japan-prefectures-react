@@ -43,7 +43,7 @@ function RouteComponent() {
     setHoveredPrefecture(getPrefectureByCode(prefectureCode) ?? null);
   };
 
-  const onMouseLeave = (prefectureCode: PrefectureCode) => {
+  const onMouseLeave = () => {
     setHoveredPrefecture(null);
   };
 
