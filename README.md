@@ -359,6 +359,11 @@ interface PrefectureMapProps {
 
 ```
 
+##### PrefectureWrapperComponent
+
+Wrapper component for each prefecture path element. Useful for wrapping tooltips or adding context behavior.
+Prefecture data is passed as a prop to the component. Defaults to React.Fragment.
+
 ## Types Reference
 
 For Typescript users, feel free to peruse the type declarations in the following files.
