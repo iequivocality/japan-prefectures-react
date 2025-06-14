@@ -2,7 +2,7 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "../lib/utils";
 
-import { MapType } from "japan-prefectures-react";
+import { type MapType } from "japan-prefectures-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
 import { Command, CommandGroup, CommandItem, CommandList } from "./ui/command";
